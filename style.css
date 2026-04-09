@@ -786,13 +786,13 @@ body::before {
   }
 
   .skeleton-map {
-    min-height: 660px;
+    min-height: 980px;
   }
 
   .skeleton-illustration {
-    left: -64px;
-    width: 468px;
-    height: 1260px;
+    left: -150px;
+    width: 690px;
+    height: 1860px;
   }
 
   .anatomy-stage {
