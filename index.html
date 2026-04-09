@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orthopedic Classifications</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260408-36">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="hero-tools">
+          <p class="eyebrow" id="heroEyebrow">Quick reference</p>
+          <button class="language-toggle" id="languageToggle" type="button">Español</button>
+        </div>
+        <h1 id="heroTitle">Orthopedic Classifications by Region</h1>
+        <p class="hero-text" id="heroText">
+          Tap a body region to open its classifications. You can also use search to find a specific
+          system by name, bone, or injury pattern.
+        </p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-stat-label" id="heroStatLabel">Loaded classifications</p>
+        <p class="hero-stat" id="classificationCount">0</p>
+        <p class="hero-stat-footnote" id="heroStatFootnote">Anatomy map + search</p>
+      </div>
+    </header>
+
+    <main class="app-grid">
+      <section class="panel anatomy-panel">
+        <div class="section-head compact">
+          <div>
+            <p class="section-label" id="skeletonSectionLabel">Skeleton</p>
+            <h2 id="skeletonHeading">Choose a region</h2>
+          </div>
+        </div>
+
+        <div class="anatomy-stage">
+          <div class="skeleton-map" id="skeletonMap">
+            <img class="skeleton-illustration" src="assets/skeleton-base.png" alt="Anatomical skeleton" id="skeletonIllustration">
+
+            <button class="anatomy-hotspot" data-region="Clavicle"></button>
+            <button class="anatomy-hotspot" data-region="Shoulder"></button>
+            <button class="anatomy-hotspot" data-region="Elbow"></button>
+            <button class="anatomy-hotspot" data-region="Wrist"></button>
+            <button class="anatomy-hotspot" data-region="Hand"></button>
+            <button class="anatomy-hotspot" data-region="Spine"></button>
+            <button class="anatomy-hotspot" data-region="Pelvis"></button>
+            <button class="anatomy-hotspot" data-region="Hip"></button>
+            <button class="anatomy-hotspot" data-region="Knee"></button>
+            <button class="anatomy-hotspot" data-region="Ankle"></button>
+            <button class="anatomy-hotspot" data-region="Foot"></button>
+            <button class="anatomy-hotspot" data-region="Pediatrics"></button>
+            <button class="anatomy-hotspot" data-region="General Trauma"></button>
+          </div>
+        </div>
+
+        <div class="region-chips" id="regionChips"></div>
+      </section>
+
+      <section class="panel results-panel">
+        <label class="field-label" for="searchInput" id="searchLabel">Search classification</label>
+        <div class="search-wrap">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Example: Garden, clavicle, ankle, open"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="filters">
+          <div class="filter-group">
+            <label class="field-label" for="regionFilter" id="regionLabel">Region</label>
+            <select id="regionFilter">
+              <option value="all">All</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="field-label" for="typeFilter" id="typeLabel">Type</label>
+            <select id="typeFilter">
+              <option value="all">All</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-head results-head">
+          <div>
+            <p class="section-label" id="resultsSectionLabel">Library</p>
+            <h2 id="resultsHeading">All classifications</h2>
+          </div>
+          <p class="results-count" id="resultsCount">0 resultados</p>
+        </div>
+
+        <div class="results-list" id="resultsList"></div>
+      </section>
+
+      <aside class="panel details-panel">
+        <div class="empty-state" id="emptyState">
+          <p class="section-label" id="emptySectionLabel">Detail</p>
+          <h2 id="emptyTitle">Choose a classification</h2>
+          <p id="emptyCopy">
+            Tap a skeleton region or a result card to see its types, imaging clues,
+            reference images, and clinical notes here.
+          </p>
+        </div>
+
+        <article class="details-card hidden" id="detailsCard">
+          <div class="details-header">
+            <div>
+              <p class="section-label" id="detailRegion"></p>
+              <h2 id="detailName"></h2>
+            </div>
+            <span class="detail-type" id="detailType"></span>
+          </div>
+
+          <p class="detail-summary" id="detailSummary"></p>
+
+          <section class="detail-image-panel">
+            <img id="detailImage" alt="Ilustracion de clasificacion ortopedica">
+            <div class="detail-image-strip hidden" id="detailImageStrip"></div>
+            <p class="image-hint" id="imageHint"></p>
+          </section>
+
+          <section class="detail-section">
+            <h3 id="detailUseHeading">Used for</h3>
+            <p id="detailUse"></p>
+          </section>
+
+          <section class="detail-section">
+            <h3 id="detailClassificationHeading">Classification</h3>
+            <div class="levels-list" id="detailLevels"></div>
+          </section>
+
+          <section class="detail-section detail-grid">
+            <div>
+              <h3 id="detailImagingHeading">Imaging / clues</h3>
+              <p id="detailImaging"></p>
+            </div>
+            <div>
+              <h3 id="detailNotesHeading">Clinical notes</h3>
+              <p id="detailNotes"></p>
+            </div>
+          </section>
+
+          <section class="detail-section">
+            <h3 id="detailKeywordsHeading">Keywords</h3>
+            <div class="keyword-list" id="detailKeywords"></div>
+          </section>
+        </article>
+      </aside>
+    </main>
+
+    <footer class="brand-footer panel">
+      <div class="brand-footer-copy">
+        <p class="section-label" id="brandSectionLabel">Trauma Channel</p>
+        <h2 id="brandTitle">Follow Trauma Channel on Facebook</h2>
+        <p id="brandCopy">
+          Scan the QR code to open the Trauma Channel Facebook page.
+        </p>
+        <a
+          class="brand-link"
+          id="brandLink"
+          href="https://web.facebook.com/profile.php?id=61576634519247"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open Facebook page
+        </a>
+        <p class="brand-copyright" id="brandCopyright">
+          Copyright © Trauma Channel. All rights reserved.
+        </p>
+      </div>
+
+      <div class="brand-qr-card">
+        <img
+          id="brandQr"
+          class="brand-qr"
+          src="https://quickchart.io/qr?size=220&text=https%3A%2F%2Fweb.facebook.com%2Fprofile.php%3Fid%3D61576634519247"
+          alt="Trauma Channel Facebook QR code"
+        >
+      </div>
+    </footer>
+  </div>
+
+  <div class="region-view hidden" id="regionView">
+    <div class="region-view-backdrop" id="regionViewBackdrop"></div>
+    <section class="region-view-panel">
+      <div class="region-view-head">
+        <div>
+          <p class="section-label" id="regionViewSectionLabel">Region app</p>
+          <h2 id="regionViewTitle"></h2>
+          <p class="region-view-copy" id="regionViewCopy"></p>
+        </div>
+        <button class="region-view-close" id="regionViewClose" type="button">Back</button>
+      </div>
+
+      <div class="region-view-grid">
+        <div class="region-view-list" id="regionViewList"></div>
+        <article class="region-view-detail" id="regionViewDetail">
+          <img class="region-view-image" id="regionViewImage" alt="Classification image">
+          <div class="region-view-image-strip hidden" id="regionViewImageStrip"></div>
+          <h3 id="regionViewDetailName"></h3>
+          <p class="region-view-detail-type" id="regionViewDetailType"></p>
+          <p class="region-view-detail-summary" id="regionViewDetailSummary"></p>
+          <div class="region-view-levels" id="regionViewLevels"></div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js?v=20260408-35"></script>
+</body>
+</html>
