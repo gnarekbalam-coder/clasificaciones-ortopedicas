@@ -792,7 +792,7 @@ body::before {
   .skeleton-illustration {
     left: -150px;
     width: 690px;
-    height: 1860px;
+    height: 1750px;
   }
 
   .anatomy-stage {
@@ -804,16 +804,16 @@ body::before {
     padding: 10px 14px;
   }
 
-  .anatomy-hotspot[data-region="Clavicle"] { top: 70px; left: -20px; }
+  .anatomy-hotspot[data-region="Clavicle"] { top: 70px; left: -10px; }
   .anatomy-hotspot[data-region="Shoulder"] { top: 90px; right: -70px; }
   .anatomy-hotspot[data-region="Elbow"] { top: 260px; right: -60px; }
   .anatomy-hotspot[data-region="Wrist"] { top: 440px; right: -16px; }
   .anatomy-hotspot[data-region="Hand"] { top: 520px; right: -10px; }
   .anatomy-hotspot[data-region="Spine"] { top: 196px; left: 200px; }
-  .anatomy-hotspot[data-region="Pelvis"] { top: 350px; left: -48px; }
-  .anatomy-hotspot[data-region="Hip"] { top: 440px; left: -2px; }
-  .anatomy-hotspot[data-region="Knee"] { top: 646px; left: 15px; }
-  .anatomy-hotspot[data-region="Ankle"] { top: 900px; left:30px; }
+  .anatomy-hotspot[data-region="Pelvis"] { top: 350px; left:35px; }
+  .anatomy-hotspot[data-region="Hip"] { top: 440px; left: 15px; }
+  .anatomy-hotspot[data-region="Knee"] { top: 646px; left: 30px; }
+  .anatomy-hotspot[data-region="Ankle"] { top: 900px; left:50px; }
   .anatomy-hotspot[data-region="Foot"] { top: 980px; left: 198px; }
   .anatomy-hotspot[data-region="Pediatrics"] { top: -6px; right: -30px; }
   .anatomy-hotspot[data-region="General Trauma"] { top: 34px; right: -100px; }
