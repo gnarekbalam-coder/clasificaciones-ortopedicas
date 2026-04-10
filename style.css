@@ -800,8 +800,8 @@ body::before {
   }
 
   .anatomy-hotspot {
-    font-size: 0.82rem;
-    padding: 7px 9px;
+    font-size: 1.64rem;
+    padding: 10px 14px;
   }
 
   .anatomy-hotspot[data-region="Clavicle"] { top: 56px; left: 10px; }
