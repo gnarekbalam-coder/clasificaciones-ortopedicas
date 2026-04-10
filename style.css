@@ -76,6 +76,13 @@ body::before {
   align-items: center;
 }
 
+.hero-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .language-toggle {
   border: 1px solid rgba(176, 138, 62, 0.28);
   border-radius: 999px;
@@ -104,6 +111,22 @@ body::before {
   color: var(--primary);
 }
 
+.beta-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 138, 62, 0.28);
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.96), rgba(71, 71, 71, 0.92) 58%, rgba(176, 138, 62, 0.88));
+  color: #fff7e6;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .hero h1,
 .section-head h2,
 .empty-state h2,
@@ -123,6 +146,14 @@ body::before {
   max-width: 56ch;
   color: var(--muted);
   font-size: 1.08rem;
+}
+
+.beta-copy {
+  margin: 14px 0 0;
+  max-width: 44ch;
+  color: rgba(18, 18, 18, 0.7);
+  font-size: 0.97rem;
+  font-weight: 600;
 }
 
 .hero-card {
@@ -845,6 +876,10 @@ body::before {
   .hero-tools {
     flex-direction: column;
     align-items: start;
+  }
+
+  .hero-badges {
+    gap: 8px;
   }
 
   .hero h1 {

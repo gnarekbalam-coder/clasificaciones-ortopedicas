@@ -4,23 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orthopedic Classifications</title>
+  <meta name="theme-color" content="#111111">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trauma Channel Beta">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/app-icon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260409-04">
+  <link rel="stylesheet" href="style.css?v=20260409-05">
 </head>
 <body>
   <div class="page-shell">
     <header class="hero">
       <div class="hero-copy">
         <div class="hero-tools">
-          <p class="eyebrow" id="heroEyebrow">Quick reference</p>
-          <button class="language-toggle" id="languageToggle" type="button">EspaÃ±ol</button>
+          <div class="hero-badges">
+            <p class="eyebrow" id="heroEyebrow">Quick reference</p>
+            <span class="beta-badge" id="betaBadge">Beta</span>
+          </div>
+          <button class="language-toggle" id="languageToggle" type="button">Español</button>
         </div>
         <h1 id="heroTitle">Orthopedic Classifications by Region</h1>
         <p class="hero-text" id="heroText">
           Tap a body region to open its classifications. You can also use search to find a specific
           system by name, bone, or injury pattern.
+        </p>
+        <p class="beta-copy" id="betaCopy">
+          Beta version for educational use. Install it on your phone for faster access.
         </p>
       </div>
       <div class="hero-card">
@@ -94,7 +107,7 @@
             <p class="section-label" id="resultsSectionLabel">Library</p>
             <h2 id="resultsHeading">All classifications</h2>
           </div>
-          <p class="results-count" id="resultsCount">0 resultados</p>
+          <p class="results-count" id="resultsCount">0 results</p>
         </div>
 
         <div class="results-list" id="resultsList"></div>
@@ -122,7 +135,7 @@
           <p class="detail-summary" id="detailSummary"></p>
 
           <section class="detail-image-panel">
-            <img id="detailImage" alt="Ilustracion de clasificacion ortopedica">
+            <img id="detailImage" alt="Orthopedic classification illustration">
             <div class="detail-image-strip hidden" id="detailImageStrip"></div>
             <p class="image-hint" id="imageHint"></p>
           </section>
@@ -173,7 +186,7 @@
           Open Facebook page
         </a>
         <p class="brand-copyright" id="brandCopyright">
-          Copyright Â© Trauma Channel. All rights reserved.
+          Copyright &copy; Trauma Channel. All rights reserved.
         </p>
       </div>
 
@@ -222,6 +235,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=20260409-04"></script>
+  <script src="app.js?v=20260409-05"></script>
 </body>
 </html>

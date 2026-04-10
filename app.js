@@ -319,8 +319,10 @@ const uiText = {
     pageTitle: "Orthopedic Classifications",
     languageToggle: "Espanol",
     heroEyebrow: "Quick reference",
+    betaBadge: "Beta",
     heroTitle: "Orthopedic Classifications by Region",
     heroText: "Tap a body region to open its classifications. You can also use search to find a specific system by name, bone, or injury pattern.",
+    betaCopy: "Beta version for educational use. Install it on your phone for faster access.",
     heroStatLabel: "Loaded classifications",
     heroStatFootnote: "Anatomy map + search",
     skeletonSectionLabel: "Skeleton",
@@ -360,15 +362,17 @@ const uiText = {
     brandTitle: "Follow Trauma Channel on Facebook",
     brandCopy: "Scan the QR code to open the Trauma Channel Facebook page.",
     brandLink: "Open Facebook page",
-    brandCopyright: "Copyright Â© Trauma Channel. All rights reserved.",
+    brandCopyright: "Copyright © Trauma Channel. All rights reserved.",
     brandQrAlt: "Trauma Channel Facebook QR code"
   },
   es: {
     pageTitle: "Clasificaciones Ortopedicas",
     languageToggle: "English",
     heroEyebrow: "Referencia rapida",
+    betaBadge: "Beta",
     heroTitle: "Clasificaciones Ortopedicas por Region",
     heroText: "Toca una parte del cuerpo para abrir sus clasificaciones. Tambien puedes usar la busqueda para encontrar una clasificacion especifica por nombre, hueso o lesion.",
+    betaCopy: "Version beta de uso educativo. Instalala en tu celular para abrirla mas rapido.",
     heroStatLabel: "Clasificaciones cargadas",
     heroStatFootnote: "Mapa anatomico + buscador",
     skeletonSectionLabel: "Esqueleto",
@@ -408,7 +412,7 @@ const uiText = {
     brandTitle: "Sigue a Trauma Channel en Facebook",
     brandCopy: "Escanea el codigo QR para abrir la pagina de Facebook de Trauma Channel.",
     brandLink: "Abrir pagina de Facebook",
-    brandCopyright: "Copyright Â© Trauma Channel. Todos los derechos reservados.",
+    brandCopyright: "Copyright © Trauma Channel. Todos los derechos reservados.",
     brandQrAlt: "Codigo QR de Facebook de Trauma Channel"
   }
 };
@@ -1043,8 +1047,10 @@ const imageLightboxBackdrop = document.querySelector("#imageLightboxBackdrop");
 const imageLightboxClose = document.querySelector("#imageLightboxClose");
 const imageLightboxImage = document.querySelector("#imageLightboxImage");
 const heroEyebrow = document.querySelector("#heroEyebrow");
+const betaBadge = document.querySelector("#betaBadge");
 const heroTitle = document.querySelector("#heroTitle");
 const heroText = document.querySelector("#heroText");
+const betaCopy = document.querySelector("#betaCopy");
 const heroStatLabel = document.querySelector("#heroStatLabel");
 const heroStatFootnote = document.querySelector("#heroStatFootnote");
 const skeletonSectionLabel = document.querySelector("#skeletonSectionLabel");
@@ -1105,8 +1111,10 @@ function renderStaticText() {
   document.title = t("pageTitle");
   languageToggle.textContent = t("languageToggle");
   heroEyebrow.textContent = t("heroEyebrow");
+  betaBadge.textContent = t("betaBadge");
   heroTitle.textContent = t("heroTitle");
   heroText.textContent = t("heroText");
+  betaCopy.textContent = t("betaCopy");
   heroStatLabel.textContent = t("heroStatLabel");
   heroStatFootnote.textContent = t("heroStatFootnote");
   skeletonSectionLabel.textContent = t("skeletonSectionLabel");
@@ -1629,6 +1637,18 @@ function closeRegionView() {
   regionView.classList.add("hidden");
 }
 
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator) || !window.isSecureContext) {
+    return;
+  }
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {
+      // Keep the app usable even if offline support is unavailable.
+    });
+  });
+}
+
 function render() {
   const items = getFilteredItems();
   const activeItem = ensureActiveItem(items);
@@ -1771,3 +1791,5 @@ document.addEventListener("keydown", (event) => {
 
 classificationCount.textContent = String(classifications.length);
 render();
+registerServiceWorker();
+

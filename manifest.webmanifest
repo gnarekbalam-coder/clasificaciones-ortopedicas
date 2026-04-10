@@ -1,0 +1,27 @@
+{
+  "name": "Trauma Channel Ortho Classifications Beta",
+  "short_name": "Trauma Beta",
+  "description": "Installable orthopedic classification reference by region from Trauma Channel.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f7f4",
+  "theme_color": "#111111",
+  "orientation": "portrait-primary",
+  "categories": ["medical", "education", "reference"],
+  "icons": [
+    {
+      "src": "assets/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/app-icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
