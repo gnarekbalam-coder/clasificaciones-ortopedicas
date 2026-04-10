@@ -804,9 +804,9 @@ body::before {
     padding: 10px 14px;
   }
 
-  .anatomy-hotspot[data-region="Clavicle"] { top: 56px; left: -34px; }
-  .anatomy-hotspot[data-region="Shoulder"] { top: 78px; right: -34px; }
-  .anatomy-hotspot[data-region="Elbow"] { top: 180px; right: -26px; }
+  .anatomy-hotspot[data-region="Clavicle"] { top: 48px; left: -34px; }
+  .anatomy-hotspot[data-region="Shoulder"] { top: 78px; right: -20px; }
+  .anatomy-hotspot[data-region="Elbow"] { top: 100px; right: -30px; }
   .anatomy-hotspot[data-region="Wrist"] { top: 306px; right: -16px; }
   .anatomy-hotspot[data-region="Hand"] { top: 364px; right: -10px; }
   .anatomy-hotspot[data-region="Spine"] { top: 182px; left: 122px; }
