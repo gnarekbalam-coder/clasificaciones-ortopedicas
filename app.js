@@ -1038,6 +1038,10 @@ const regionViewDetailName = document.querySelector("#regionViewDetailName");
 const regionViewDetailType = document.querySelector("#regionViewDetailType");
 const regionViewDetailSummary = document.querySelector("#regionViewDetailSummary");
 const regionViewLevels = document.querySelector("#regionViewLevels");
+const imageLightbox = document.querySelector("#imageLightbox");
+const imageLightboxBackdrop = document.querySelector("#imageLightboxBackdrop");
+const imageLightboxClose = document.querySelector("#imageLightboxClose");
+const imageLightboxImage = document.querySelector("#imageLightboxImage");
 const heroEyebrow = document.querySelector("#heroEyebrow");
 const heroTitle = document.querySelector("#heroTitle");
 const heroText = document.querySelector("#heroText");
@@ -1129,6 +1133,7 @@ function renderStaticText() {
   brandLink.textContent = t("brandLink");
   brandCopyright.textContent = t("brandCopyright");
   brandQr.alt = t("brandQrAlt");
+  imageLightboxClose.textContent = state.language === "en" ? "Close" : "Cerrar";
 }
 
 function uniqueValues(key) {
@@ -1247,6 +1252,17 @@ function setActiveDetailImage(item, src) {
   });
 }
 
+function openImageLightbox(src, alt) {
+  imageLightboxImage.src = src;
+  imageLightboxImage.alt = alt;
+  imageLightbox.classList.remove("hidden");
+}
+
+function closeImageLightbox() {
+  imageLightbox.classList.add("hidden");
+  imageLightboxImage.src = "";
+}
+
 function setActiveRegionViewImage(item, src) {
   const localizedItem = getLocalizedItem(item);
   regionViewImage.dataset.itemId = item.id;
@@ -1276,6 +1292,7 @@ function renderDetailImageStrip(item) {
     thumb.dataset.src = src;
     thumb.addEventListener("click", () => {
       setActiveDetailImage(item, src);
+      openImageLightbox(src, `${t("detailImageAlt")(item.name)} ${index + 1}`);
     });
     detailImageStrip.append(thumb);
   });
@@ -1298,6 +1315,7 @@ function renderRegionViewImageStrip(item) {
     thumb.dataset.src = src;
     thumb.addEventListener("click", () => {
       setActiveRegionViewImage(item, src);
+      openImageLightbox(src, `${t("regionViewImageAlt")(getLocalizedItem(item).name)} ${index + 1}`);
     });
     regionViewImageStrip.append(thumb);
   });
@@ -1668,6 +1686,40 @@ detailImage.addEventListener("load", () => {
   }
 });
 
+detailImage.addEventListener("click", () => {
+  if (detailImage.src) {
+    openImageLightbox(detailImage.src, detailImage.alt);
+  }
+});
+
+regionViewImage.addEventListener("click", () => {
+  if (regionViewImage.src) {
+    openImageLightbox(regionViewImage.src, regionViewImage.alt);
+  }
+});
+
+resultsList.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof HTMLImageElement)) {
+    return;
+  }
+
+  if (target.classList.contains("result-thumb")) {
+    openImageLightbox(target.src, target.alt);
+  }
+});
+
+regionViewList.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof HTMLImageElement)) {
+    return;
+  }
+
+  if (target.classList.contains("region-view-thumb")) {
+    openImageLightbox(target.src, target.alt);
+  }
+});
+
 resultsList.addEventListener("error", (event) => {
   const target = event.target;
   if (!(target instanceof HTMLImageElement)) {
@@ -1709,6 +1761,13 @@ hotspots.forEach((button) => {
 
 regionViewClose.addEventListener("click", closeRegionView);
 regionViewBackdrop.addEventListener("click", closeRegionView);
+imageLightboxClose.addEventListener("click", closeImageLightbox);
+imageLightboxBackdrop.addEventListener("click", closeImageLightbox);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeImageLightbox();
+  }
+});
 
 classificationCount.textContent = String(classifications.length);
 render();

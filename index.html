@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260409-03">
+  <link rel="stylesheet" href="style.css?v=20260409-04">
 </head>
 <body>
   <div class="page-shell">
@@ -15,7 +15,7 @@
       <div class="hero-copy">
         <div class="hero-tools">
           <p class="eyebrow" id="heroEyebrow">Quick reference</p>
-          <button class="language-toggle" id="languageToggle" type="button">Español</button>
+          <button class="language-toggle" id="languageToggle" type="button">EspaÃ±ol</button>
         </div>
         <h1 id="heroTitle">Orthopedic Classifications by Region</h1>
         <p class="hero-text" id="heroText">
@@ -173,7 +173,7 @@
           Open Facebook page
         </a>
         <p class="brand-copyright" id="brandCopyright">
-          Copyright © Trauma Channel. All rights reserved.
+          Copyright Â© Trauma Channel. All rights reserved.
         </p>
       </div>
 
@@ -214,6 +214,14 @@
     </section>
   </div>
 
-  <script src="app.js?v=20260408-35"></script>
+  <div class="image-lightbox hidden" id="imageLightbox">
+    <button class="image-lightbox-backdrop" id="imageLightboxBackdrop" type="button" aria-label="Close image preview"></button>
+    <div class="image-lightbox-panel">
+      <button class="image-lightbox-close" id="imageLightboxClose" type="button">Close</button>
+      <img class="image-lightbox-image" id="imageLightboxImage" alt="Expanded classification image">
+    </div>
+  </div>
+
+  <script src="app.js?v=20260409-04"></script>
 </body>
 </html>
