@@ -44,7 +44,7 @@ const classifications = [
     { title: "Bisagra medial desplazada > 2 mm", description: "La perdida de la bisagra medial aumenta inestabilidad e isquemia potencial." },
     { title: "Trazo anatomico del cuello", description: "Las fracturas que comprometen el cuello anatomico incrementan la preocupacion por perfusion de la cabeza." }
   ]),
-  makeItem("codman", "Codman", "Shoulder", "Fractura", "Describe fracturas del humero proximal a partir de cuatro segmentos anatomicos clasicos.", "Base conceptual para clasificaciones modernas del humero proximal y para entender combinaciones tipo LEGO.", "AP, Y escapular, axilar y CT si el patron es complejo.", "Los segmentos son cabeza, troquiter, troquin y diafisis; la combinacion de partes orienta complejidad y manejo.", ["codman", "humero proximal", "4 partes", "lego"], [
+  makeItem("codman", "Codman / LEGO", "Shoulder", "Fractura", "Describe fracturas del humero proximal a partir de cuatro segmentos anatomicos clasicos.", "Base conceptual para clasificaciones modernas del humero proximal y para entender combinaciones tipo LEGO.", "AP, Y escapular, axilar y CT si el patron es complejo.", "Los segmentos son cabeza, troquiter, troquin y diafisis; la combinacion de partes orienta complejidad y manejo.", ["codman", "humero proximal", "4 partes", "lego"], [
     { title: "Una parte", description: "Ningun segmento principal esta desplazado de forma relevante." },
     { title: "Dos partes", description: "Un segmento se separa del resto, como cuello quirurgico o una tuberosidad." },
     { title: "Tres partes", description: "Dos segmentos estan desplazados, con mayor complejidad reconstructiva." },
@@ -291,6 +291,43 @@ const classifications = [
     { title: "Grado III", description: "Fisuras profundas." },
     { title: "Grado IV", description: "Exposicion de hueso subcondral." }
   ]),
+  makeItem("meyers-mckeever", "Meyers-McKeever", "Knee", "Fractura", "Clasifica las fracturas-avulsion de la espina tibial por desplazamiento del fragmento.", "Muy util en lesiones del LCA pediatrico y del adolescente para decidir reduccion y fijacion.", "Radiografias AP/lateral y CT o MRI si se quiere definir rotacion, menisco interpuesto o extension asociada.", "La modificacion habitual agrega un tipo IV para fragmentos conminutos o rotados.", ["meyers-mckeever", "espina tibial", "eminencia intercondilea", "acl avulsion"], [
+    { title: "Tipo I", description: "No desplazada o minimamente desplazada." },
+    { title: "Tipo II", description: "Elevacion parcial con bisagra posterior intacta." },
+    { title: "Tipo III", description: "Desplazamiento completo del fragmento." },
+    { title: "Tipo IV", description: "Fragmento rotado o conminuto en la version modificada." }
+  ]),
+  makeItem("lachman-grading", "Lachman grading", "Knee", "Exploracion", "Gradua la laxitud anterior tibial y la calidad del tope en la prueba de Lachman.", "Ayuda a describir de forma estandar la sospecha de lesion del LCA en la exploracion fisica.", "Es una maniobra clinica; puede correlacionarse con artrómetro o MRI, pero la escala es de examen fisico.", "Suele combinarse desplazamiento comparativo lado a lado con la sensacion de endpoint firme o blando.", ["lachman", "acl", "laxitud", "endpoint"], [
+    { title: "Grado 1+", description: "Traslacion aumentada leve, aproximadamente 3-5 mm respecto al lado sano." },
+    { title: "Grado 2+", description: "Traslacion moderada, aproximadamente 5-10 mm." },
+    { title: "Grado 3+", description: "Traslacion marcada, mayor de 10 mm." },
+    { title: "Endpoint", description: "Un tope blando aumenta la sospecha de insuficiencia del LCA." }
+  ]),
+  makeItem("kellgren-lawrence", "Kellgren-Lawrence", "Knee", "Artrosis", "Clasifica la artrosis de rodilla por severidad radiografica.", "Muy usada en clinica e investigacion para estratificar osteoartrosis tibiofemoral.", "Radiografias con carga AP, lateral y, segun el caso, Rosenberg o skyline patelofemoral.", "La presencia de osteofitos define los grados bajos; el estrechamiento severo y deformidad caracterizan los altos.", ["kellgren-lawrence", "gonartrosis", "osteoarthritis", "knee oa"], [
+    { title: "Grado 0", description: "Sin hallazgos radiograficos de artrosis." },
+    { title: "Grado 1", description: "Dudosos osteofitos y sin estrechamiento claro." },
+    { title: "Grado 2", description: "Osteofitos definidos con posible estrechamiento leve." },
+    { title: "Grado 3", description: "Osteofitos multiples, estrechamiento moderado y esclerosis posible." },
+    { title: "Grado 4", description: "Gran estrechamiento, esclerosis marcada y deformidad osea." }
+  ]),
+  makeItem("insall-salvati", "Insall-Salvati ratio", "Knee", "Parametros sagitales", "Relacion para valorar altura patelar en radiografia lateral.", "Sirve para detectar patela alta o baja y complementar el estudio de inestabilidad o dolor femoropatelar.", "Radiografia lateral de rodilla a unos 30 grados de flexion; se divide longitud del tendon rotuliano entre la longitud maxima de la patela.", "De forma practica, alrededor de 1.0 es normal; valores altos sugieren patela alta y bajos patela baja.", ["insall-salvati", "patella alta", "patellar height", "knee"], [
+    { title: "Medicion", description: "Longitud del tendon rotuliano / longitud maxima de la patela." },
+    { title: "Normal", description: "Aproximadamente 0.8-1.2 segun tecnica y serie." },
+    { title: "Patela alta", description: "Usualmente > 1.2." },
+    { title: "Patela baja", description: "Usualmente < 0.8." }
+  ]),
+  makeItem("caton-deschamps", "Caton-Deschamps", "Knee", "Parametros sagitales", "Indice de altura patelar basado en la superficie articular patelar.", "Muy util en inestabilidad patelofemoral y como alternativa/complemento a Insall-Salvati.", "Radiografia lateral de rodilla; distancia del borde inferior articular patelar al angulo anterosuperior tibial dividida por la longitud articular patelar.", "Asumo que 'De champs' se refiere a Caton-Deschamps; si querias otra medicion la cambio.", ["caton-deschamps", "patella alta", "patellar height", "de champs"], [
+    { title: "Medicion", description: "Distancia tibio-patelar inferior / longitud de la superficie articular de la patela." },
+    { title: "Normal", description: "Aproximadamente 0.6-1.3 segun tecnica y poblacion." },
+    { title: "Patela alta", description: "Usualmente > 1.2-1.3." },
+    { title: "Patela baja", description: "Usualmente < 0.6-0.8." }
+  ]),
+  makeItem("dejour", "Dejour", "Knee", "Inestabilidad", "Clasifica la displasia troclear en tipos A-D.", "Muy util para describir morfologia troclear en inestabilidad patelofemoral recurrente.", "Radiografia lateral verdadera y MRI/CT axial para valorar crossing sign, spur y doble contorno.", "Su reproducibilidad interobservador es imperfecta, pero sigue siendo la referencia mas difundida para comunicar displasia troclear.", ["dejour", "trochlear dysplasia", "patellar instability", "crossing sign"], [
+    { title: "Tipo A", description: "Troclea poco profunda, con displasia leve." },
+    { title: "Tipo B", description: "Troclea plana o convexa con supratrochlear spur." },
+    { title: "Tipo C", description: "Asimetria marcada con faceta lateral convexa y medial hipoplasica." },
+    { title: "Tipo D", description: "Displasia severa con cliff pattern, spur y morfologia muy anormal." }
+  ]),
   makeItem("moore-patella", "Patella fracture patterns", "Knee", "Fractura", "Patrones utiles para rotula: transversa, polar, marginal, osteocondral y conminuta.", "No es una sola escala universal, pero organiza la lectura de fracturas de patela.", "AP, lateral y skyline cuando es posible.", "Importa mucho el mecanismo extensor.", ["rotula", "patela", "transversa"], [
     { title: "Transversa", description: "Trazo horizontal clasico." },
     { title: "Polo inferior", description: "Avulsion del polo inferior." },
@@ -313,6 +350,29 @@ const classifications = [
     { title: "Tipo C", description: "A nivel del plafon." },
     { title: "Tipo D", description: "Vertical supraplataforma." }
   ]),
+  makeItem("haraguchi", "Haraguchi", "Ankle", "Fractura", "Clasifica fracturas del maleolo posterior con base en CT.", "Ayuda a describir la morfologia del fragmento posterior y su relacion con el incisura/sindesmosis.", "CT axial y sagital del tobillo; es una clasificacion tomografica.", "Fue una de las primeras clasificaciones CT modernas para maleolo posterior, aunque hoy convive con Bartonicek y Mason.", ["haraguchi", "posterior malleolus", "ankle", "ct"], [
+    { title: "Tipo I", description: "Fragmento posterolateral oblicuo, el patron mas comun." },
+    { title: "Tipo II", description: "Fragmento medial extendido o de mayor compromiso transversal." },
+    { title: "Tipo III", description: "Pequeno fragmento en concha posteromedial." }
+  ]),
+  makeItem("bartonicek", "Bartonicek/Rammelt", "Ankle", "Fractura", "Clasifica fracturas del maleolo posterior por localizacion, incisura fibular y patron del fragmento.", "Tiene valor practico porque se correlaciona mejor con algoritmo de abordaje y fijacion del maleolo posterior.", "CT axial/sagital/coronal para definir notch fibular y extension del fragmento.", "Entre las clasificaciones del maleolo posterior, es de las mas utiles para plan terapeutico.", ["bartonicek", "rammelt", "posterior malleolus", "incisura"], [
+    { title: "Tipo 1", description: "Fragmento extraincisural pequeno." },
+    { title: "Tipo 2", description: "Fragmento posterolateral que incluye parte de la incisura fibular." },
+    { title: "Tipo 3", description: "Fragmento posteromedial de dos partes o compromiso medial adicional." },
+    { title: "Tipo 4", description: "Gran fragmento posterolateral que abarca amplia porcion del plafon/incisura." },
+    { title: "Tipo 5", description: "Patron irregular u osteoporotico/no clasificable tipico." }
+  ]),
+  makeItem("mason-ankle", "Mason & Molloy", "Ankle", "Fractura", "Clasificacion del maleolo posterior basada en mecanica lesional y progresion de severidad.", "Ayuda a ordenar patrones de maleolo posterior y pensar el abordaje de fijacion segun el fragmento principal.", "CT del tobillo para caracterizar el fragmento posterior principal y su extension medial o posteromedial.", "Asumo aqui que 'Mason' en tobillo se refiere a Mason & Molloy para maleolo posterior.", ["mason", "molloy", "posterior malleolus", "ankle"], [
+    { title: "Tipo 1", description: "Fragmento posterior pequeno extraarticular o avulsivo." },
+    { title: "Tipo 2A", description: "Fragmento posterolateral principal." },
+    { title: "Tipo 2B", description: "Extension posteromedial asociada al fragmento principal." },
+    { title: "Tipo 3", description: "Patron coronal grande o de alta energia con mayor complejidad articular." }
+  ]),
+  makeItem("syndesmosis-measures", "Syndesmosis measures", "Ankle", "Parametros sagitales", "Resumen breve de las medidas radiograficas mas usadas para valorar la sindesmosis distal tibiofibular.", "Sirve para tamizaje rapido de ensanchamiento sindesmotico en AP y mortaja, siempre comparando con contexto clinico y, si hace falta, el lado sano.", "Radiografias AP y mortaja: clear space tibiofibular, overlap tibiofibular y espacio claro medial; CT si la sospecha persiste.", "De forma clasica: clear space < 6 mm; overlap > 6 mm o > 42% del perone en AP y > 1 mm en mortaja, aunque hay variacion anatomica normal.", ["syndesmosis", "clear space", "overlap", "ankle", "mortise"], [
+    { title: "Tibiofibular clear space", description: "Distancia entre tibia y perone distales; un ensanchamiento > 6 mm es sospechoso." },
+    { title: "Tibiofibular overlap", description: "Superposicion tibiofibular; disminuye cuando hay diastasis." },
+    { title: "Medial clear space", description: "Se interpreta junto a mortaja y lesion del deltoideo, no aislado para sindesmosis." }
+  ]),
   makeItem("sanders", "Sanders", "Foot", "Fractura", "Clasificacion tomografica de fracturas intraarticulares de calcaneo.", "Muy importante para cirugia y pronostico del calcaneo.", "CT coronal en faceta posterior.", "Mas fragmentos articulares suele significar peor pronostico.", ["pie", "calcaneo", "ct"], [
     { title: "Tipo I", description: "No desplazada." },
     { title: "Tipo II", description: "Dos fragmentos articulares." },
@@ -329,6 +389,23 @@ const classifications = [
     { title: "Tipo II", description: "Luxacion subtalar." },
     { title: "Tipo III", description: "Luxacion subtalar y tibiotalar." },
     { title: "Tipo IV", description: "Ademas luxacion talonavicular." }
+  ]),
+  makeItem("essex-lopresti", "Essex-Lopresti", "Foot", "Fractura", "Clasifica fracturas intraarticulares de calcaneo segun la direccion de la linea secundaria de fractura.", "Sigue siendo una referencia clasica en radiografias laterales para entender patron de tongue-type versus joint depression.", "Radiografia lateral de calcaneo y CT para complemento anatómico actual.", "Aunque Sanders domina en CT, Essex-Lopresti sigue siendo muy util para mecanismo y riesgo de compromiso posterior de piel en tongue-type.", ["essex-lopresti", "calcaneo", "tongue type", "joint depression"], [
+    { title: "Tongue-type", description: "La linea secundaria sale posterior hacia la tuberosidad." },
+    { title: "Joint depression", description: "La linea secundaria termina detras de la faceta posterior con hundimiento articular." }
+  ]),
+  makeItem("sneppen", "Sneppen", "Foot", "Fractura talo", "Clasifica fracturas del cuerpo y procesos del talo.", "Util para ordenar patrones del cuerpo talar mas alla del cuello y recordar lesiones de procesos lateral/posterior.", "Radiografias y CT para definir cuerpo, domo, procesos y conminucion.", "Incluye lesiones osteocondrales del domo, fracturas coronales/sagitales del cuerpo y fracturas por aplastamiento o de procesos.", ["sneppen", "talo", "talar body", "process fractures"], [
+    { title: "A", description: "Lesion osteocondral o de compresion del domo talar." },
+    { title: "B", description: "Fractura coronal del cuerpo talar." },
+    { title: "C", description: "Fractura sagital del cuerpo talar." },
+    { title: "D", description: "Fractura del proceso posterior." },
+    { title: "E", description: "Fractura del proceso lateral." },
+    { title: "F", description: "Fractura conminuta/aplastamiento del cuerpo talar." }
+  ]),
+  makeItem("lawrence-botte", "Lawrence-Botte", "Foot", "Fractura", "Clasifica fracturas proximales del quinto metatarsiano por zona anatomica.", "Muy util para separar avulsion tuberositaria, union metafisodiafisaria tipo Jones y fracturas diafisarias proximales por estres.", "Radiografias AP, oblicua y lateral del pie; CT/MRI si hay duda o sospecha de estres.", "Es especialmente importante porque cada zona tiene biologia y manejo distinto.", ["lawrence-botte", "5th metatarsal", "jones", "zone fracture"], [
+    { title: "Zona 1", description: "Avulsion de la tuberosidad proximal." },
+    { title: "Zona 2", description: "Union metafisodiafisaria; clasica fractura de Jones." },
+    { title: "Zona 3", description: "Diafisis proximal; con frecuencia por estres." }
   ]),
   makeItem("denis", "Denis", "Spine", "Columna toracolumbar", "Modelo de tres columnas para trauma toracolumbar.", "Ayuda a entender estabilidad e indicacion de estudios adicionales.", "Radiografias y CT; MRI si hay duda ligamentaria.", "La lesion de columna media aumenta inestabilidad.", ["columna", "toracolumbar", "tres columnas"], [
     { title: "Anterior", description: "Ligamento anterior y cuerpo vertebral anterior." },
@@ -350,6 +427,13 @@ const classifications = [
     { title: "Pelvic tilt (PT)", description: "Angulo entre la vertical y la linea que une el centro de las cabezas femorales con el punto medio del platillo sacro superior." },
     { title: "Sacral slope (SS)", description: "Angulo entre el platillo sacro superior y la horizontal." },
     { title: "Pelvic incidence (PI)", description: "Angulo entre la perpendicular al platillo sacro superior y la linea al centro bicoxofemoral; PI = PT + SS." }
+  ]),
+  makeItem("asia", "ASIA", "Spine", "Neurologico", "Escala neurologica estandar para clasificar lesion medular de A a E.", "Sirve para comunicar completitud de la lesion, seguimiento y pronostico funcional general.", "Exploracion neurologica ASIA/ISNCSCI con examen motor, sensitivo y ahorro sacro.", "El ahorro sacro es central para distinguir lesion completa de incompleta.", ["asia", "ais", "spinal cord injury", "sacral sparing"], [
+    { title: "A", description: "Completa: no funcion sensitiva ni motora en S4-S5." },
+    { title: "B", description: "Sensitiva incompleta: hay sensibilidad sacra, sin funcion motora por debajo del nivel neurologico." },
+    { title: "C", description: "Motora incompleta: mas de la mitad de musculos clave por debajo del nivel tienen fuerza menor de 3." },
+    { title: "D", description: "Motora incompleta: al menos la mitad de musculos clave tienen fuerza 3 o mayor." },
+    { title: "E", description: "Neurologicamente normal tras una lesion previa." }
   ])
 ];
 
@@ -412,11 +496,13 @@ const typeLabels = {
   "Fractura-luxacion": { en: "Fracture-dislocation", es: "Fractura-luxacion" },
   Quemaduras: { en: "Burns / TBSA", es: "Quemaduras" },
   "Concepto anatomico": { en: "Anatomic concept", es: "Concepto anatomico" },
+  Exploracion: { en: "Examination", es: "Exploracion" },
   Tendones: { en: "Tendons", es: "Tendones" },
   Congenita: { en: "Congenital", es: "Congenita" },
   "Necrosis avascular": { en: "Avascular necrosis", es: "Necrosis avascular" },
   Artrosis: { en: "Osteoarthritis", es: "Artrosis" },
-  "Parametros sagitales": { en: "Sagittal parameters", es: "Parametros sagitales" }
+  "Parametros sagitales": { en: "Sagittal parameters", es: "Parametros sagitales" },
+  Neurologico: { en: "Neurologic", es: "Neurologico" }
 };
 
 const uiText = {
@@ -1120,6 +1206,85 @@ const englishContent = {
       { title: "Grade IV", description: "Subchondral bone exposure." }
     ]
   },
+  "meyers-mckeever": {
+    summary: "Classifies tibial spine avulsion fractures by fragment displacement.",
+    use: "Very useful in pediatric and adolescent ACL avulsion injuries to guide reduction and fixation.",
+    imaging: "AP/lateral radiographs and CT or MRI when rotation, meniscal interposition, or associated extension is suspected.",
+    notes: "The common modification adds a type IV for rotated or comminuted fragments.",
+    keywords: ["meyers-mckeever", "tibial spine", "intercondylar eminence", "acl avulsion"],
+    levels: [
+      { title: "Type I", description: "Nondisplaced or minimally displaced." },
+      { title: "Type II", description: "Partial elevation with an intact posterior hinge." },
+      { title: "Type III", description: "Complete displacement of the fragment." },
+      { title: "Type IV", description: "Rotated or comminuted fragment in the modified version." }
+    ]
+  },
+  "lachman-grading": {
+    summary: "Grades anterior tibial translation and endpoint quality on the Lachman test.",
+    use: "Helps standardize clinical suspicion of ACL injury during physical examination.",
+    imaging: "Clinical maneuver; it may correlate with arthrometry or MRI, but the scale itself is examination based.",
+    notes: "It is usually described with side-to-side translation and whether the endpoint feels firm or soft.",
+    keywords: ["lachman", "acl", "laxity", "endpoint"],
+    levels: [
+      { title: "Grade 1+", description: "Mildly increased translation, about 3-5 mm versus the opposite side." },
+      { title: "Grade 2+", description: "Moderate translation, about 5-10 mm." },
+      { title: "Grade 3+", description: "Marked translation, greater than 10 mm." },
+      { title: "Endpoint", description: "A soft endpoint increases concern for ACL insufficiency." }
+    ]
+  },
+  "kellgren-lawrence": {
+    summary: "Classifies knee osteoarthritis by radiographic severity.",
+    use: "Widely used in practice and research to stratify tibiofemoral osteoarthritis.",
+    imaging: "Weight-bearing AP and lateral radiographs, with Rosenberg or patellofemoral views when needed.",
+    notes: "Osteophytes define the lower grades; marked joint-space loss and deformity define the higher grades.",
+    keywords: ["kellgren-lawrence", "gonarthrosis", "osteoarthritis", "knee oa"],
+    levels: [
+      { title: "Grade 0", description: "No radiographic signs of osteoarthritis." },
+      { title: "Grade 1", description: "Doubtful osteophytes without clear joint-space narrowing." },
+      { title: "Grade 2", description: "Definite osteophytes with possible mild narrowing." },
+      { title: "Grade 3", description: "Multiple osteophytes, moderate narrowing, and possible sclerosis." },
+      { title: "Grade 4", description: "Large osteophytes, severe narrowing, sclerosis, and bony deformity." }
+    ]
+  },
+  "insall-salvati": {
+    summary: "Ratio used to assess patellar height on the lateral radiograph.",
+    use: "Useful for detecting patella alta or baja and complementing patellofemoral instability workup.",
+    imaging: "Lateral knee radiograph at about 30 degrees of flexion; tendon length divided by maximal patellar length.",
+    notes: "In practice, values around 1.0 are normal; higher values suggest patella alta and lower values patella baja.",
+    keywords: ["insall-salvati", "patella alta", "patellar height", "knee"],
+    levels: [
+      { title: "Measurement", description: "Patellar tendon length / maximal patellar length." },
+      { title: "Normal", description: "Roughly 0.8-1.2 depending on technique and series." },
+      { title: "Patella alta", description: "Usually > 1.2." },
+      { title: "Patella baja", description: "Usually < 0.8." }
+    ]
+  },
+  "caton-deschamps": {
+    summary: "Patellar height index based on the patellar articular surface.",
+    use: "Very useful in patellofemoral instability and as an alternative/complement to Insall-Salvati.",
+    imaging: "Lateral knee radiograph; distance from the inferior articular patellar edge to the anterosuperior tibial angle divided by the patellar articular length.",
+    notes: "I am assuming 'De champs' refers to Caton-Deschamps; if you meant another measurement I can swap it.",
+    keywords: ["caton-deschamps", "patella alta", "patellar height", "de champs"],
+    levels: [
+      { title: "Measurement", description: "Inferior tibio-patellar distance / patellar articular length." },
+      { title: "Normal", description: "Roughly 0.6-1.3 depending on technique and population." },
+      { title: "Patella alta", description: "Usually > 1.2-1.3." },
+      { title: "Patella baja", description: "Usually < 0.6-0.8." }
+    ]
+  },
+  dejour: {
+    summary: "Classifies trochlear dysplasia into types A-D.",
+    use: "Very useful for describing trochlear morphology in recurrent patellofemoral instability.",
+    imaging: "True lateral radiograph and axial MRI/CT to assess the crossing sign, spur, and double contour.",
+    notes: "Interobserver reproducibility is imperfect, but it remains the most widely used reference for communicating trochlear dysplasia.",
+    keywords: ["dejour", "trochlear dysplasia", "patellar instability", "crossing sign"],
+    levels: [
+      { title: "Type A", description: "Shallow trochlea with mild dysplasia." },
+      { title: "Type B", description: "Flat or convex trochlea with a supratrochlear spur." },
+      { title: "Type C", description: "Marked asymmetry with a convex lateral facet and hypoplastic medial facet." },
+      { title: "Type D", description: "Severe dysplasia with a cliff pattern, spur, and very abnormal morphology." }
+    ]
+  },
   "moore-patella": {
     summary: "Useful patellar fracture patterns: transverse, pole, marginal, osteochondral, and comminuted.",
     use: "Not a single universal scale, but it organizes patella fracture reading.",
@@ -1170,6 +1335,57 @@ const englishContent = {
       { title: "Type D", description: "Vertical supraplatform fracture." }
     ]
   },
+  haraguchi: {
+    summary: "CT-based classification of posterior malleolus fractures.",
+    use: "Helps describe posterior fragment morphology and its relation to the incisura and syndesmosis.",
+    imaging: "Axial and sagittal ankle CT; it is a tomographic classification.",
+    notes: "It was one of the earliest modern CT classifications for the posterior malleolus, although today it coexists with Bartonicek and Mason systems.",
+    keywords: ["haraguchi", "posterior malleolus", "ankle", "ct"],
+    levels: [
+      { title: "Type I", description: "Posterolateral oblique fragment, the most common pattern." },
+      { title: "Type II", description: "Extended medial fragment or greater transverse involvement." },
+      { title: "Type III", description: "Small shell-like posteromedial fragment." }
+    ]
+  },
+  bartonicek: {
+    summary: "Classifies posterior malleolus fractures by location, fibular notch involvement, and fragment pattern.",
+    use: "Practical value because it correlates better with surgical planning for posterior malleolus fixation.",
+    imaging: "Axial/sagittal/coronal CT to define the fibular notch and fragment extension.",
+    notes: "Among posterior malleolus classifications, it is one of the most useful for treatment planning.",
+    keywords: ["bartonicek", "rammelt", "posterior malleolus", "incisura"],
+    levels: [
+      { title: "Type 1", description: "Small extraincisural fragment." },
+      { title: "Type 2", description: "Posterolateral fragment involving part of the fibular incisura." },
+      { title: "Type 3", description: "Two-part or posteromedial extension pattern." },
+      { title: "Type 4", description: "Large posterolateral fragment involving a broad portion of the plafond/incisura." },
+      { title: "Type 5", description: "Irregular or osteoporotic/nonclassifiable pattern." }
+    ]
+  },
+  "mason-ankle": {
+    summary: "Posterior malleolus classification based on injury mechanics and increasing severity.",
+    use: "Helps organize posterior malleolus patterns and think about fixation approach according to the main fragment.",
+    imaging: "Ankle CT to characterize the main posterior fragment and any medial or posteromedial extension.",
+    notes: "I am assuming that 'Mason' at the ankle refers to Mason & Molloy for posterior malleolus fractures.",
+    keywords: ["mason", "molloy", "posterior malleolus", "ankle"],
+    levels: [
+      { title: "Type 1", description: "Small extra-articular or avulsion-type posterior fragment." },
+      { title: "Type 2A", description: "Main posterolateral fragment." },
+      { title: "Type 2B", description: "Posteromedial extension associated with the main fragment." },
+      { title: "Type 3", description: "Large coronal/high-energy pattern with greater articular complexity." }
+    ]
+  },
+  "syndesmosis-measures": {
+    summary: "Brief reference of the radiographic measures most often used to assess the distal tibiofibular syndesmosis.",
+    use: "Useful for quick screening of syndesmotic widening on AP and mortise views, always interpreted in clinical context and sometimes against the opposite side.",
+    imaging: "AP and mortise radiographs: tibiofibular clear space, tibiofibular overlap, and medial clear space; CT if suspicion persists.",
+    notes: "Classically: clear space < 6 mm; overlap > 6 mm or > 42% of fibular width on AP and > 1 mm on mortise, although normal anatomic variation exists.",
+    keywords: ["syndesmosis", "clear space", "overlap", "ankle", "mortise"],
+    levels: [
+      { title: "Tibiofibular clear space", description: "Distance between distal tibia and fibula; widening > 6 mm is suspicious." },
+      { title: "Tibiofibular overlap", description: "Tibiofibular overlap decreases with diastasis." },
+      { title: "Medial clear space", description: "Interpreted together with the mortise and deltoid injury, not alone for syndesmosis." }
+    ]
+  },
   sanders: {
     summary: "CT-based classification of intra-articular calcaneus fractures.",
     use: "Very important for calcaneal surgery and prognosis.",
@@ -1206,6 +1422,44 @@ const englishContent = {
       { title: "Type II", description: "Subtalar dislocation." },
       { title: "Type III", description: "Subtalar and tibiotalar dislocation." },
       { title: "Type IV", description: "Also talonavicular dislocation." }
+    ]
+  },
+  "essex-lopresti": {
+    summary: "Classifies intra-articular calcaneus fractures by the direction of the secondary fracture line.",
+    use: "Classic reference on lateral radiographs for distinguishing tongue-type from joint-depression patterns.",
+    imaging: "Calcaneal lateral radiograph with CT as modern anatomic complement.",
+    notes: "Although Sanders dominates CT-based work, Essex-Lopresti remains very useful for mechanism and posterior skin-risk recognition in tongue-type fractures.",
+    keywords: ["essex-lopresti", "calcaneus", "tongue type", "joint depression"],
+    levels: [
+      { title: "Tongue-type", description: "The secondary fracture line exits posteriorly toward the tuberosity." },
+      { title: "Joint depression", description: "The secondary line ends behind the posterior facet with articular depression." }
+    ]
+  },
+  sneppen: {
+    summary: "Classifies fractures of the talar body and talar processes.",
+    use: "Useful for organizing talar body patterns beyond the neck and for remembering posterior/lateral process injuries.",
+    imaging: "Radiographs and CT to define the body, dome, processes, and comminution.",
+    notes: "Includes osteochondral dome lesions, coronal/sagittal body fractures, crush injuries, and process fractures.",
+    keywords: ["sneppen", "talus", "talar body", "process fractures"],
+    levels: [
+      { title: "A", description: "Osteochondral or compression injury of the talar dome." },
+      { title: "B", description: "Coronal talar body fracture." },
+      { title: "C", description: "Sagittal talar body fracture." },
+      { title: "D", description: "Posterior process fracture." },
+      { title: "E", description: "Lateral process fracture." },
+      { title: "F", description: "Comminuted/crush fracture of the talar body." }
+    ]
+  },
+  "lawrence-botte": {
+    summary: "Classifies proximal fifth metatarsal fractures by anatomic zone.",
+    use: "Very useful for separating tuberosity avulsion, metaphyseal-diaphyseal Jones injury, and proximal diaphyseal stress fractures.",
+    imaging: "AP, oblique, and lateral foot radiographs; CT/MRI when uncertain or stress injury is suspected.",
+    notes: "Especially important because each zone has different biology and treatment implications.",
+    keywords: ["lawrence-botte", "5th metatarsal", "jones", "zone fracture"],
+    levels: [
+      { title: "Zone 1", description: "Avulsion of the proximal tuberosity." },
+      { title: "Zone 2", description: "Metaphyseal-diaphyseal junction; classic Jones fracture." },
+      { title: "Zone 3", description: "Proximal diaphysis, often stress related." }
     ]
   },
   denis: {
@@ -1256,6 +1510,20 @@ const englishContent = {
       { title: "Sacral slope (SS)", description: "Angle between the S1 superior endplate and the horizontal." },
       { title: "Pelvic incidence (PI)", description: "Angle between the perpendicular to the S1 superior endplate and the line to the bicoxofemoral center; PI = PT + SS." }
     ]
+  },
+  asia: {
+    summary: "Standard neurologic scale for classifying spinal cord injury from A to E.",
+    use: "Useful for communicating injury completeness, follow-up, and general functional prognosis.",
+    imaging: "ASIA/ISNCSCI neurologic examination with motor, sensory, and sacral sparing assessment.",
+    notes: "Sacral sparing is central for distinguishing complete from incomplete injury.",
+    keywords: ["asia", "ais", "spinal cord injury", "sacral sparing"],
+    levels: [
+      { title: "A", description: "Complete: no sensory or motor function in S4-S5." },
+      { title: "B", description: "Sensory incomplete: sacral sensation is present, but no motor function below the neurologic level." },
+      { title: "C", description: "Motor incomplete: more than half of key muscles below the level have strength less than 3." },
+      { title: "D", description: "Motor incomplete: at least half of key muscles have strength 3 or greater." },
+      { title: "E", description: "Neurologically normal after prior injury." }
+    ]
   }
 };
 
@@ -1281,6 +1549,7 @@ const imageManifest = {
   fernandez: ["assets/classifications/fernandez.jpg"],
   frykman: ["assets/classifications/frykman.jpg"],
   mason: ["assets/classifications/mason.jpg"],
+  "mason-ankle": ["assets/classifications/mason.jpg"],
   mayfield: [
     "assets/classifications/mayfield-1.jpg",
     "assets/classifications/mayfield-2.jpg",

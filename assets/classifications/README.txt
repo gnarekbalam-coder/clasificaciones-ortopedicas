@@ -27,6 +27,20 @@ Examples:
 - al-qattan.jpg
 - ficat-arlet.jpg
 - tonnis.jpg
+- meyers-mckeever.jpg
+- lachman-grading.jpg
+- kellgren-lawrence.jpg
+- insall-salvati.jpg
+- caton-deschamps.jpg
+- dejour.jpg
+- haraguchi.jpg
+- bartonicek.jpg
+- mason-ankle.jpg
+- syndesmosis-measures.jpg
+- asia.jpg
+- essex-lopresti.jpg
+- sneppen.jpg
+- lawrence-botte.jpg
 
 If you want more than one image for the same classification:
 - Keep the files in this folder
