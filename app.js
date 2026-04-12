@@ -359,9 +359,9 @@ const uiText = {
     detailImageAlt: (name) => `Illustration of ${name}`,
     regionViewImageAlt: (name) => `${name} classification image`,
     brandSectionLabel: "Trauma Channel",
-    brandTitle: "Follow Trauma Channel on Facebook",
-    brandCopy: "Scan the QR code to open the Trauma Channel Facebook page.",
-    brandLink: "Open Facebook page",
+    brandTitle: "Trauma Channel",
+    brandCopy: "Facebook",
+    brandLink: "Open Facebook",
     brandCopyright: "Copyright © Trauma Channel. All rights reserved.",
     brandQrAlt: "Trauma Channel Facebook QR code"
   },
@@ -409,9 +409,9 @@ const uiText = {
     detailImageAlt: (name) => `Ilustracion de ${name}`,
     regionViewImageAlt: (name) => `Imagen de ${name}`,
     brandSectionLabel: "Trauma Channel",
-    brandTitle: "Sigue a Trauma Channel en Facebook",
-    brandCopy: "Escanea el codigo QR para abrir la pagina de Facebook de Trauma Channel.",
-    brandLink: "Abrir pagina de Facebook",
+    brandTitle: "Trauma Channel",
+    brandCopy: "Facebook",
+    brandLink: "Abrir Facebook",
     brandCopyright: "Copyright © Trauma Channel. Todos los derechos reservados.",
     brandQrAlt: "Codigo QR de Facebook de Trauma Channel"
   }
