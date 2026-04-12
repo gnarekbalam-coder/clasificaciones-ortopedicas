@@ -169,6 +169,40 @@ body::before {
   overflow: hidden;
 }
 
+.hero-card-fill {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 160px;
+}
+
+.hero-card-orb,
+.hero-card-notch {
+  display: block;
+  border: 1px solid rgba(255, 247, 230, 0.26);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.hero-card-orb {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05) 52%, transparent 70%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.hero-card-notch {
+  width: 112px;
+  height: 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
 .hero-card::after {
   content: "";
   position: absolute;
@@ -190,6 +224,19 @@ body::before {
   font-size: clamp(3rem, 7vw, 4.8rem);
   font-weight: 700;
   font-family: "Space Grotesk", sans-serif;
+}
+
+.hero-hidden-copy {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .app-grid {
@@ -871,6 +918,19 @@ body::before {
   .hero-card,
   .panel {
     padding: 18px;
+  }
+
+  .hero-card-fill {
+    min-height: 124px;
+  }
+
+  .hero-card-orb {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-card-notch {
+    width: 88px;
   }
 
   .hero-tools {
