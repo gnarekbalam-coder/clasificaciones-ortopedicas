@@ -508,7 +508,7 @@ const typeLabels = {
 const uiText = {
   en: {
     pageTitle: "Orthopedic Classifications",
-    languageToggle: "Espanol",
+    languageToggle: "ES",
     heroEyebrow: "Quick reference",
     betaBadge: "Beta",
     heroTitle: "Orthopedic Classifications by Region",
@@ -558,7 +558,7 @@ const uiText = {
   },
   es: {
     pageTitle: "Clasificaciones Ortopedicas",
-    languageToggle: "English",
+    languageToggle: "EN",
     heroEyebrow: "Referencia rapida",
     betaBadge: "Beta",
     heroTitle: "Clasificaciones Ortopedicas por Region",
