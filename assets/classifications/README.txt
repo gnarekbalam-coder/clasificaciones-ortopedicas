@@ -10,6 +10,18 @@ Examples:
 - rockwood.jpg
 - garden.jpg
 - schatzker.jpg
+- delbet.jpg
+- ogden.jpg
+- weiss.jpg
+- bado.jpg
+
+If you want more than one image for the same classification:
+- Keep the files in this folder
+- Add the extra file names in `imageManifest` inside `app.js`
+
+Examples:
+- "salter-harris": ["assets/classifications/salter-harris-1.jpg", "assets/classifications/salter-harris-2.jpg"]
+- "delbet": ["assets/classifications/delbet-1.jpg", "assets/classifications/delbet-2.jpg"]
 
 How it works:
 - If the JPG exists, the app shows your real image

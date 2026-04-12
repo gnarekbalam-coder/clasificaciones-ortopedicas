@@ -116,6 +116,30 @@ const classifications = [
     { title: "Etapa 1-2", description: "Fracturas tempranas y menos desplazadas." },
     { title: "Etapa 3-5", description: "Fracturas completas, inestables y desplazadas." }
   ]),
+  makeItem("delbet", "Delbet", "Pediatrics", "Fractura", "Clasifica fracturas del cuello femoral pediatrico por localizacion anatomica.", "Ayuda a estimar riesgo de necrosis avascular, pseudoartrosis y deformidad del crecimiento.", "AP de pelvis y lateral de cadera; CT o MRI si la linea es sutil o para plan quirurgico.", "El riesgo de necrosis avascular es mayor en los patrones mas proximales, sobre todo el tipo I.", ["delbet", "cuello femoral", "pediatria", "necrosis avascular"], [
+    { title: "Tipo I", description: "Transepifisaria; puede asociar luxacion de cadera y es la de peor pronostico vascular." },
+    { title: "Tipo II", description: "Transcervical a traves del cuello femoral; clasica y de alto riesgo biologico." },
+    { title: "Tipo III", description: "Cervicotrocanterica o basicervical; mas distal y con menor riesgo que I-II." },
+    { title: "Tipo IV", description: "Intertrocanterica; la mas extracapsular y en general la de mejor pronostico." }
+  ]),
+  makeItem("ogden", "Ogden", "Pediatrics", "Fractura", "Clasifica fracturas-avulsion de la tuberosidad tibial en adolescentes y extiende Watson-Jones.", "Sirve para comunicar extension proximal al cartilago, conminucion y posible compromiso articular.", "AP y lateral de rodilla; CT si se sospecha extension intraarticular o patron complejo.", "Los subtipos B indican conminucion o desplazamiento mayor; los tipos IV-V suelen ser mas inestables y pueden asociar sindrome compartimental.", ["ogden", "tuberosidad tibial", "adolescente", "avulsion"], [
+    { title: "Tipo I", description: "Avulsion distal de la tuberosidad; A simple, B conminuta o mas desplazada." },
+    { title: "Tipo II", description: "El trazo progresa a la fisis proximal sin entrar claramente a la articulacion; A simple, B conminuta." },
+    { title: "Tipo III", description: "Extension intraarticular hacia la superficie tibial proximal; A simple, B conminuta." },
+    { title: "Tipo IV", description: "Avulsion de toda la epifisis proximal con extension posterior." },
+    { title: "Tipo V", description: "Patron periostal en Y o combinacion de avulsion con fractura de la tibia proximal." }
+  ]),
+  makeItem("weiss", "Weiss", "Pediatrics", "Fractura condilo lateral", "Clasifica fracturas del condilo lateral humeral pediatrico por desplazamiento y congruencia articular.", "Muy util para decidir yeso, fijacion percutanea o reduccion abierta segun estabilidad articular.", "Radiografia AP, lateral y oblicua interna; artrograma o fluoroscopia si la superficie articular no es clara.", "Un desplazamiento mayor o igual a 2 mm aumenta la sospecha de inestabilidad; la incongruencia articular define la lesion mas severa.", ["weiss", "condilo lateral", "codo pediatrico", "desplazamiento"], [
+    { title: "Tipo I", description: "Desplazamiento menor de 2 mm con superficie articular presumiblemente intacta." },
+    { title: "Tipo II", description: "Desplazamiento de 2 mm o mas, pero con bisagra cartilaginosa o congruencia articular mantenida." },
+    { title: "Tipo III", description: "Desplazamiento de 2 mm o mas con incongruencia o discontinuidad articular franca." }
+  ]),
+  makeItem("bado", "Bado", "Pediatrics", "Fractura-luxacion", "Clasifica lesiones de Monteggia por direccion de la luxacion de la cabeza radial y patron cubital.", "Ayuda a reconocer Monteggia y sus equivalentes en ninos, incluyendo deformidad plastica del cubito.", "AP y lateral de codo y antebrazo completos; siempre revisar la linea radiocapitelar.", "En pediatria puede haber deformidad plastica del cubito sin fractura evidente; si se pasa por alto, la cabeza radial puede quedar luxada cronica.", ["bado", "monteggia", "cabeza radial", "cubito", "pediatria"], [
+    { title: "Tipo I", description: "Luxacion anterior de la cabeza radial con angulacion anterior del cubito o fractura diafisaria." },
+    { title: "Tipo II", description: "Luxacion posterior o posterolateral de la cabeza radial con angulacion posterior del cubito." },
+    { title: "Tipo III", description: "Luxacion lateral o anterolateral de la cabeza radial con fractura metafisaria proximal del cubito." },
+    { title: "Tipo IV", description: "Luxacion anterior de la cabeza radial con fracturas de radio y cubito al mismo nivel." }
+  ]),
   makeItem("tile", "Tile", "Pelvis", "Anillo pelvico", "Clasifica lesiones del anillo pelvico por estabilidad rotacional y vertical.", "Muy util para comunicar estabilidad global, gravedad y necesidad potencial de fijacion anterior o posterior.", "AP de pelvis, inlet, outlet y CT para definir compromiso posterior.", "Las lesiones tipo A son estables; las B son inestables en rotacion; las C son inestables en rotacion y verticalmente.", ["pelvis", "anillo", "inestabilidad", "tile"], [
     { title: "Tipo A", description: "Lesiones estables del anillo pelvico." },
     { title: "Tipo A1", description: "Avulsiones o fracturas que no comprometen la estabilidad del anillo." },
@@ -669,6 +693,58 @@ const englishContent = {
     levels: [
       { title: "Stage 1-2", description: "Earlier and less displaced fractures." },
       { title: "Stage 3-5", description: "Complete, unstable, and displaced fractures." }
+    ]
+  },
+  delbet: {
+    summary: "Classifies pediatric femoral neck fractures by anatomic location.",
+    use: "Helps estimate the risk of avascular necrosis, nonunion, and growth disturbance.",
+    imaging: "Pelvis AP and hip lateral views; CT or MRI if the fracture line is subtle or for surgical planning.",
+    notes: "Avascular necrosis risk is highest in the most proximal patterns, especially type I.",
+    keywords: ["delbet", "femoral neck", "pediatrics", "avascular necrosis"],
+    levels: [
+      { title: "Type I", description: "Transepiphyseal; may be associated with hip dislocation and carries the worst vascular prognosis." },
+      { title: "Type II", description: "Transcervical through the femoral neck; classic pattern with high biologic risk." },
+      { title: "Type III", description: "Cervicotrochanteric or basicervical; more distal and generally lower risk than types I-II." },
+      { title: "Type IV", description: "Intertrochanteric; the most extracapsular pattern and usually the best prognosis." }
+    ]
+  },
+  ogden: {
+    summary: "Classifies adolescent tibial tubercle avulsion fractures and expands Watson-Jones.",
+    use: "Helps communicate proximal extension to the physis, comminution, and possible articular involvement.",
+    imaging: "Knee AP and lateral views; CT when intra-articular extension or a complex pattern is suspected.",
+    notes: "Subtype B implies more comminution or displacement; types IV-V are usually more unstable and may be associated with compartment syndrome.",
+    keywords: ["ogden", "tibial tubercle", "adolescent", "avulsion"],
+    levels: [
+      { title: "Type I", description: "Distal tubercle avulsion; A simple, B comminuted or more displaced." },
+      { title: "Type II", description: "Fracture extends toward the proximal physis without clear articular entry; A simple, B comminuted." },
+      { title: "Type III", description: "Intra-articular extension into the proximal tibial joint surface; A simple, B comminuted." },
+      { title: "Type IV", description: "Avulsion of the entire proximal tibial epiphysis with posterior extension." },
+      { title: "Type V", description: "Periosteal sleeve or Y-type combination injury involving the proximal tibia." }
+    ]
+  },
+  weiss: {
+    summary: "Classifies pediatric lateral humeral condyle fractures by displacement and articular congruity.",
+    use: "Very useful for choosing casting, percutaneous fixation, or open reduction according to articular stability.",
+    imaging: "AP, lateral, and internal oblique radiographs; arthrogram or fluoroscopy when the articular surface is unclear.",
+    notes: "Displacement of 2 mm or more raises concern for instability; articular incongruity defines the most severe injury.",
+    keywords: ["weiss", "lateral condyle", "pediatric elbow", "displacement"],
+    levels: [
+      { title: "Type I", description: "Less than 2 mm displacement with the articular surface presumed intact." },
+      { title: "Type II", description: "2 mm or more displacement, but with a preserved cartilaginous hinge or maintained articular congruity." },
+      { title: "Type III", description: "2 mm or more displacement with clear articular incongruity or complete disruption." }
+    ]
+  },
+  bado: {
+    summary: "Classifies Monteggia lesions by the direction of radial head dislocation and the ulnar pattern.",
+    use: "Helps recognize Monteggia injuries and equivalents in children, including ulnar plastic deformation.",
+    imaging: "Complete forearm and elbow AP and lateral views; always confirm the radiocapitellar line.",
+    notes: "In children there may be ulnar plastic deformation without an obvious fracture; if missed, the radial head may remain chronically dislocated.",
+    keywords: ["bado", "monteggia", "radial head", "ulna", "pediatrics"],
+    levels: [
+      { title: "Type I", description: "Anterior radial head dislocation with anterior ulnar angulation or diaphyseal fracture." },
+      { title: "Type II", description: "Posterior or posterolateral radial head dislocation with posterior ulnar angulation." },
+      { title: "Type III", description: "Lateral or anterolateral radial head dislocation with proximal ulnar metaphyseal fracture." },
+      { title: "Type IV", description: "Anterior radial head dislocation with fractures of both radius and ulna at the same level." }
     ]
   },
   tile: {
