@@ -1549,7 +1549,7 @@ const imageManifest = {
   fernandez: ["assets/classifications/fernandez.jpg"],
   frykman: ["assets/classifications/frykman.jpg"],
   mason: ["assets/classifications/mason.jpg"],
-  "mason-ankle": ["assets/classifications/mason.jpg"],
+  "mason-ankle": ["assets/classifications/mason-ankle.jpg"],
   mayfield: [
     "assets/classifications/mayfield-1.jpg",
     "assets/classifications/mayfield-2.jpg",
