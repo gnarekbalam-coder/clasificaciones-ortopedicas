@@ -71,6 +71,11 @@ const classifications = [
     { title: "Componentes", description: "Luxacion posterolateral, fractura de cabeza radial y fractura de coronoides." },
     { title: "Importancia", description: "Alta tendencia a rigidez e inestabilidad residual." }
   ]),
+  makeItem("three-column-distal-humerus", "3-column concept distal humerus", "Elbow", "Concepto anatomico", "Concepto estructural del humero distal basado en columna medial, columna lateral y bloque articular intermedio.", "Ayuda a leer fracturas complejas del humero distal y a planear fijacion que restituya columnas y superficie articular.", "Radiografias AP/lateral y CT con reconstrucciones para definir compromiso de columnas y troclea-capitellum.", "Es un marco anatomico-quirurgico mas que una escala numerica; suele combinarse con AO/OTA en fracturas articulares complejas.", ["distal humerus", "3 columns", "elbow", "columns"], [
+    { title: "Columna medial", description: "Incluye epitroclea y soporte medial del humero distal." },
+    { title: "Columna lateral", description: "Incluye capitelum y soporte lateral condilar." },
+    { title: "Bloque articular", description: "Troclea-capitelum como puente articular que debe reintegrarse a ambas columnas." }
+  ]),
   makeItem("fernandez", "Fernandez", "Wrist", "Fractura", "Clasificacion del radio distal basada en mecanismo.", "Ordena fracturas de muneca segun patron biomecanico.", "Serie de muneca y CT para patrones articulares.", "Es mas orientada al mecanismo que Colles o Smith.", ["muneca", "radio distal", "mecanismo"], [
     { title: "Tipo I", description: "Bending fracture." },
     { title: "Tipo II", description: "Shear fracture." },
@@ -96,6 +101,12 @@ const classifications = [
     { title: "Tipo C", description: "Retraso de union." },
     { title: "Tipo D", description: "No union establecida." }
   ]),
+  makeItem("melone", "Melone", "Wrist", "Fractura", "Clasifica fracturas intraarticulares complejas del radio distal segun el complejo medial y los fragmentos principales.", "Ayuda a entender la arquitectura del radio distal articular y a planear reduccion/fijacion en patrones conminutos.", "Radiografias AP/lateral y CT para definir estiloides radial, fragmento dorsal, fragmento volar y complejo medial.", "El complejo medial se considera la piedra angular articular y radioulnar distal en esta clasificacion.", ["melone", "radio distal", "intraarticular", "complexo medial"], [
+    { title: "Tipo I", description: "Patron no desplazado o minimamente desplazado." },
+    { title: "Tipo II", description: "Patron de impacto con desplazamiento del complejo medial, sin conminucion extrema." },
+    { title: "Tipo III", description: "Conminucion mayor o separacion importante de los fragmentos articulares principales." },
+    { title: "Tipo IV", description: "Lesion severa con gran inestabilidad articular y frecuente dano asociado." }
+  ]),
   makeItem("rolando-bennett", "Bennett / Rolando", "Hand", "Fractura", "Patrones clasicos en la base del primer metacarpiano.", "Muy util en trauma de pulgar y articulacion carpometacarpiana.", "AP, oblicua y lateral del pulgar.", "Bennett es de dos fragmentos; Rolando es conminuta.", ["mano", "pulgar", "bennett", "rolando"], [
     { title: "Bennett", description: "Fractura-luxacion intraarticular de dos fragmentos." },
     { title: "Rolando", description: "Fractura intraarticular conminuta en Y o T." }
@@ -105,6 +116,17 @@ const classifications = [
     { title: "Etapa II", description: "Leve estrechamiento articular con osteofitos o cuerpos libres menores de 2 mm." },
     { title: "Etapa III", description: "Estrechamiento avanzado, esclerosis o quistes subcondrales y osteofitos mayores de 2 mm; la articulacion escafotrapecial se mantiene." },
     { title: "Etapa IV", description: "Cambios avanzados como etapa III mas artrosis escafotrapecial." }
+  ]),
+  makeItem("kleinert-verdan", "Kleinert-Verdan zone", "Hand", "Tendones", "Divide las lesiones tendinosas de la mano y dedos en zonas anatomicas para flexores y extensores.", "Es clave para comunicar localizacion, dificultad tecnica y pronostico en reparacion tendinosa.", "Exploracion clinica y, segun el caso, ultrasonido o MRI; la clasificacion es principalmente anatomica.", "La zona II de flexores es la historica 'no man's land'; en extensores tambien se usan zonas secuenciales por nivel anatomico.", ["kleinert", "verdan", "zonas", "tendon flexor", "tendon extensor"], [
+    { title: "Flexores I-II", description: "Zona I distal a FDS; zona II entre FDS y polea A1, la mas desafiante para reparacion." },
+    { title: "Flexores III-V", description: "Palma, tunel carpiano y antebrazo distal respectivamente." },
+    { title: "Extensores I-IV", description: "Desde la IFD y falanges hasta el dorso de la MCP." },
+    { title: "Extensores V-VIII", description: "MCP, dorso de la mano, muneca y antebrazo distal." }
+  ]),
+  makeItem("al-qattan", "Al-Qattan", "Hand", "Congenita", "Clasificacion de la polidactilia preaxial del pulgar como un espectro que extiende los patrones clasicos de Wassel.", "Sirve para ordenar duplicaciones rudimentarias, triphalangeal thumb y variantes complejas que no encajan bien en Wassel puro.", "Radiografias AP y oblicuas de pulgar/mano; valorar falanges, metacarpiano y estabilidad articular.", "Asumo aqui la clasificacion de Al-Qattan para polidactilia preaxial del pulgar; si querias otra clasificacion de Al-Qattan te la cambio.", ["al-qattan", "pulgar", "polidactilia", "preaxial", "congenita"], [
+    { title: "Rudimentaria / flotante", description: "Duplicaciones pequenas o pediculadas que no siguen bien el eje de Wassel." },
+    { title: "Patrones tipo Wassel", description: "Duplicaciones que se alinean con falange distal, proximal o metacarpiano duplicados." },
+    { title: "Triphalangeal / complejas", description: "Incluye pulgar trifalangico, duplicaciones atipicas y variantes con mayor complejidad axial." }
   ]),
   makeItem("gustilo-anderson", "Gustilo-Anderson", "General Trauma", "Fractura abierta", "Estratifica fracturas abiertas por herida y dano de partes blandas.", "Fundamental para antibioticos, debridacion y cobertura.", "La clasificacion integra examen de herida y radiografia.", "Idealmente se confirma despues del primer debridamiento.", ["abierta", "partes blandas", "contaminacion"], [
     { title: "Tipo I", description: "Herida limpia menor de 1 cm." },
@@ -235,6 +257,18 @@ const classifications = [
     { title: "B3", description: "Implante flojo y mala reserva osea." },
     { title: "C", description: "Distal al implante." }
   ]),
+  makeItem("ficat-arlet", "Ficat-Arlet", "Hip", "Necrosis avascular", "Clasifica la osteonecrosis de cabeza femoral por estadio imagenologico y colapso.", "Muy util para comunicar fase de necrosis avascular y orientar preservacion versus artroplastia.", "Radiografias AP y lateral; MRI es especialmente util en estadios tempranos.", "Las versiones modernas suelen hablar de I-IV; cuanto mas avanzado el colapso o artrosis, peor opcion de preservacion.", ["ficat", "arlet", "osteonecrosis", "cabeza femoral", "avn"], [
+    { title: "Estadio I", description: "Radiografia normal o casi normal; MRI o estudios avanzados detectan necrosis temprana." },
+    { title: "Estadio II", description: "Esclerosis, quistes o cambios estructurales sin colapso subcondral claro." },
+    { title: "Estadio III", description: "Aparece colapso subcondral o signo de creciente sin artrosis avanzada franca." },
+    { title: "Estadio IV", description: "Aplanamiento femoral y cambios degenerativos acetabulares o coxartrosis secundaria." }
+  ]),
+  makeItem("tonnis", "Tonnis", "Hip", "Artrosis", "Clasifica la coxartrosis por severidad radiografica.", "Util para estandarizar artrosis de cadera en practica clinica e investigacion.", "Radiografias AP pelvis y lateral de cadera, valorando espacio articular, esclerosis, quistes y deformidad.", "Asumo aqui la clasificacion de Tonnis para artrosis de cadera; si querias la de displasia/desplazamiento pediatrico te la cambio.", ["tonnis", "coxartrosis", "artrosis cadera", "joint space"], [
+    { title: "Grado 0", description: "Sin signos de artrosis." },
+    { title: "Grado 1", description: "Leve estrechamiento articular, lipping marginal o esclerosis discreta." },
+    { title: "Grado 2", description: "Estrechamiento moderado, pequenos quistes y perdida parcial de esfericidad." },
+    { title: "Grado 3", description: "Estrechamiento severo, quistes grandes y deformidad marcada de la cabeza femoral." }
+  ]),
   makeItem("tronzo", "Tronzo", "Hip", "Fractura intertrocanterica", "Clasifica fracturas intertrocantericas por estabilidad, conminucion posteromedial y oblicuidad inversa.", "Todavia se usa en algunos entornos para describir estabilidad de fracturas transtrocantericas.", "AP de pelvis o cadera y lateral; CT si el patron no esta claro.", "Los tipos I-II se consideran estables y III en adelante inestables; su reproducibilidad publicada es solo moderada.", ["tronzo", "intertrocanterica", "estable", "inestable"], [
     { title: "Tipo I", description: "Fractura intertrocanterica incompleta; estable." },
     { title: "Tipo II", description: "Puede incluir trocanter menor, pero sin conminucion posteromedial; estable." },
@@ -311,6 +345,11 @@ const classifications = [
     { title: "Morfologia", description: "Compresion, estallido, traslacion o distraccion." },
     { title: "PLC", description: "Integridad del complejo ligamentario posterior." },
     { title: "Neurologico", description: "Estado neurologico como parte del puntaje final." }
+  ]),
+  makeItem("pelvic-parameters", "Pelvic parameters", "Spine", "Parametros sagitales", "Resumen breve de pelvic tilt, sacral slope e incidencia pelvica en alineacion sagital espinopelvica.", "Sirve para lectura rapida de radiografias de perfil y para entender balance sagital lumbopelvico.", "Radiografia lateral de columna/pelvis de pie con cabezas femorales visibles y lineas angulares bien trazadas.", "Relacion clave: incidencia pelvica = pelvic tilt + sacral slope; la incidencia pelvica es un parametro morfologico fijo en el adulto.", ["pelvic tilt", "sacral slope", "incidencia pelvica", "spinopelvic"], [
+    { title: "Pelvic tilt (PT)", description: "Angulo entre la vertical y la linea que une el centro de las cabezas femorales con el punto medio del platillo sacro superior." },
+    { title: "Sacral slope (SS)", description: "Angulo entre el platillo sacro superior y la horizontal." },
+    { title: "Pelvic incidence (PI)", description: "Angulo entre la perpendicular al platillo sacro superior y la linea al centro bicoxofemoral; PI = PT + SS." }
   ])
 ];
 
@@ -371,7 +410,13 @@ const typeLabels = {
   Condral: { en: "Chondral", es: "Condral" },
   Puntaje: { en: "Score", es: "Puntaje" },
   "Fractura-luxacion": { en: "Fracture-dislocation", es: "Fractura-luxacion" },
-  Quemaduras: { en: "Burns / TBSA", es: "Quemaduras" }
+  Quemaduras: { en: "Burns / TBSA", es: "Quemaduras" },
+  "Concepto anatomico": { en: "Anatomic concept", es: "Concepto anatomico" },
+  Tendones: { en: "Tendons", es: "Tendones" },
+  Congenita: { en: "Congenital", es: "Congenita" },
+  "Necrosis avascular": { en: "Avascular necrosis", es: "Necrosis avascular" },
+  Artrosis: { en: "Osteoarthritis", es: "Artrosis" },
+  "Parametros sagitales": { en: "Sagittal parameters", es: "Parametros sagitales" }
 };
 
 const uiText = {
@@ -630,6 +675,18 @@ const englishContent = {
       { title: "Importance", description: "High tendency toward stiffness and residual instability." }
     ]
   },
+  "three-column-distal-humerus": {
+    summary: "Structural concept of the distal humerus based on the medial column, lateral column, and the central articular block.",
+    use: "Helps read complex distal humerus fractures and plan fixation that restores both columns and the articular surface.",
+    imaging: "AP/lateral radiographs and CT with reconstructions to define column and trochlea-capitellum involvement.",
+    notes: "It is an anatomic-surgical framework rather than a numeric scale; it is commonly paired with AO/OTA in complex articular fractures.",
+    keywords: ["distal humerus", "3 columns", "elbow", "columns"],
+    levels: [
+      { title: "Medial column", description: "Includes the medial epicondylar support and medial distal humerus buttress." },
+      { title: "Lateral column", description: "Includes capitellar/lateral condylar support." },
+      { title: "Articular block", description: "The trochlea-capitellum unit that must be linked back to both columns." }
+    ]
+  },
   fernandez: {
     summary: "Distal radius classification based on mechanism.",
     use: "Organizes wrist fractures by biomechanical pattern.",
@@ -705,6 +762,31 @@ const englishContent = {
       { title: "Stage II", description: "Mild joint-space narrowing with osteophytes or loose bodies smaller than 2 mm." },
       { title: "Stage III", description: "Advanced narrowing, sclerosis or subchondral cysts, and osteophytes larger than 2 mm; scaphotrapezial joint still preserved." },
       { title: "Stage IV", description: "Stage III changes plus scaphotrapezial arthrosis." }
+    ]
+  },
+  "kleinert-verdan": {
+    summary: "Divides hand and finger tendon injuries into anatomic zones for flexors and extensors.",
+    use: "Key system for communicating location, technical difficulty, and prognosis in tendon repair.",
+    imaging: "Primarily anatomic and clinical; ultrasound or MRI may assist selected cases.",
+    notes: "Flexor zone II is the historical 'no man's land'; extensor injuries are also discussed by sequential zones.",
+    keywords: ["kleinert", "verdan", "zones", "flexor tendon", "extensor tendon"],
+    levels: [
+      { title: "Flexor zones I-II", description: "Zone I is distal to FDS insertion; zone II lies between FDS insertion and A1 pulley and is the most challenging for repair." },
+      { title: "Flexor zones III-V", description: "Palm, carpal tunnel, and distal forearm respectively." },
+      { title: "Extensor zones I-IV", description: "From the DIP joint and phalanges to the dorsum of the MCP." },
+      { title: "Extensor zones V-VIII", description: "MCP, dorsum of hand, wrist, and distal forearm." }
+    ]
+  },
+  "al-qattan": {
+    summary: "Classification of preaxial thumb polydactyly as a spectrum extending beyond classic Wassel patterns.",
+    use: "Useful for organizing rudimentary duplications, triphalangeal thumb, and complex variants that do not fit neatly into pure Wassel categories.",
+    imaging: "Thumb/hand AP and oblique radiographs evaluating phalanges, metacarpal, and joint stability.",
+    notes: "I am assuming here the Al-Qattan classification for preaxial thumb polydactyly; if you meant a different Al-Qattan hand classification I can swap it.",
+    keywords: ["al-qattan", "thumb", "polydactyly", "preaxial", "congenital"],
+    levels: [
+      { title: "Rudimentary / floating", description: "Small or pedunculated duplications that do not follow the usual Wassel axis." },
+      { title: "Wassel-like patterns", description: "Duplications that align with distal phalanx, proximal phalanx, or metacarpal duplication patterns." },
+      { title: "Triphalangeal / complex", description: "Includes triphalangeal thumb, atypical duplications, and more complex axial variants." }
     ]
   },
   "gustilo-anderson": {
@@ -969,6 +1051,32 @@ const englishContent = {
       { title: "C", description: "Distal to the implant." }
     ]
   },
+  "ficat-arlet": {
+    summary: "Classifies femoral head osteonecrosis by imaging stage and collapse.",
+    use: "Very useful for communicating the phase of avascular necrosis and choosing joint-preserving treatment versus arthroplasty.",
+    imaging: "AP/lateral radiographs; MRI is especially useful in early stages.",
+    notes: "Modern use usually focuses on stages I-IV; more collapse and secondary arthrosis imply worse preservation options.",
+    keywords: ["ficat", "arlet", "osteonecrosis", "femoral head", "avn"],
+    levels: [
+      { title: "Stage I", description: "Normal or nearly normal radiographs; MRI or advanced studies detect early necrosis." },
+      { title: "Stage II", description: "Sclerosis, cysts, or structural changes without clear subchondral collapse." },
+      { title: "Stage III", description: "Subchondral collapse or crescent sign appears without end-stage arthrosis." },
+      { title: "Stage IV", description: "Femoral head flattening with acetabular degenerative change or secondary coxarthrosis." }
+    ]
+  },
+  tonnis: {
+    summary: "Classifies hip osteoarthritis by radiographic severity.",
+    use: "Useful for standardizing coxarthrosis severity in clinical practice and research.",
+    imaging: "AP pelvis and hip lateral radiographs assessing joint space, sclerosis, cysts, and deformity.",
+    notes: "I am assuming here the Tonnis classification for hip osteoarthritis; if you meant the dysplasia/dislocation grading I can swap it.",
+    keywords: ["tonnis", "coxarthrosis", "hip osteoarthritis", "joint space"],
+    levels: [
+      { title: "Grade 0", description: "No signs of osteoarthritis." },
+      { title: "Grade 1", description: "Slight joint-space narrowing, marginal lipping, or mild sclerosis." },
+      { title: "Grade 2", description: "Moderate narrowing, small cysts, and partial loss of femoral head sphericity." },
+      { title: "Grade 3", description: "Severe narrowing, large cysts, and marked femoral head deformity." }
+    ]
+  },
   tronzo: {
     summary: "Classifies intertrochanteric fractures by stability, posteromedial comminution, and reverse obliquity.",
     use: "Still used in some settings to describe stability of transtrochanteric hip fractures.",
@@ -1135,6 +1243,18 @@ const englishContent = {
       { title: "Morphology", description: "Compression, burst, translation, or distraction." },
       { title: "PLC", description: "Integrity of the posterior ligamentous complex." },
       { title: "Neurologic", description: "Neurologic status as part of the final score." }
+    ]
+  },
+  "pelvic-parameters": {
+    summary: "Brief reference for pelvic tilt, sacral slope, and pelvic incidence in spinopelvic sagittal alignment.",
+    use: "Useful for quick reading of standing lateral radiographs and understanding lumbopelvic balance.",
+    imaging: "Standing lateral spine/pelvis radiograph with visible femoral heads and the S1 superior endplate.",
+    notes: "Key relation: pelvic incidence = pelvic tilt + sacral slope; pelvic incidence is considered morphologic and relatively fixed in adults.",
+    keywords: ["pelvic tilt", "sacral slope", "pelvic incidence", "spinopelvic"],
+    levels: [
+      { title: "Pelvic tilt (PT)", description: "Angle between the vertical and the line joining the bicoxofemoral center to the midpoint of the S1 superior endplate." },
+      { title: "Sacral slope (SS)", description: "Angle between the S1 superior endplate and the horizontal." },
+      { title: "Pelvic incidence (PI)", description: "Angle between the perpendicular to the S1 superior endplate and the line to the bicoxofemoral center; PI = PT + SS." }
     ]
   }
 };

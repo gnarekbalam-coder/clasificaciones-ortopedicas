@@ -20,6 +20,13 @@ Examples:
 - hertel.jpg
 - codman.jpg
 - mayo-fjd.jpg
+- three-column-distal-humerus.jpg
+- pelvic-parameters.jpg
+- melone.jpg
+- kleinert-verdan.jpg
+- al-qattan.jpg
+- ficat-arlet.jpg
+- tonnis.jpg
 
 If you want more than one image for the same classification:
 - Keep the files in this folder
