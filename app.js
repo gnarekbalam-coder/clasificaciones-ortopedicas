@@ -13,6 +13,12 @@ const classifications = [
     { title: "Tipo II", description: "Trazo medial al complejo ligamentario con desplazamiento." },
     { title: "Tipo III", description: "Extension intraarticular hacia la acromioclavicular." }
   ]),
+  makeItem("robinson", "Robinson", "Clavicle", "Fractura", "Clasifica fracturas de clavicula por localizacion anatomica y desplazamiento.", "Muy util para ordenar fracturas del tercio medial, diafisario y lateral, especialmente en estudios y comunicacion quirurgica.", "Radiografias AP, cefalica y, si hace falta, CT en extremos medial o lateral complejos.", "El grupo 2 corresponde al tercio medio; los subgrupos B suelen implicar desplazamiento o conminucion significativa.", ["robinson", "clavicula", "midshaft", "desplazada"], [
+    { title: "Tipo 1", description: "Fracturas del tercio medial de clavicula." },
+    { title: "Tipo 2A", description: "Fracturas diafisarias minimamente desplazadas." },
+    { title: "Tipo 2B", description: "Fracturas diafisarias desplazadas o conminutas." },
+    { title: "Tipo 3", description: "Fracturas del tercio lateral, con estabilidad variable segun ligamentos coracoclaviculares." }
+  ]),
   makeItem("rockwood", "Rockwood", "Shoulder", "Luxacion / Ligamentaria", "Clasifica lesiones acromioclaviculares por desplazamiento y ligamentos.", "Base practica para separar lesiones AC leves de lesiones complejas.", "Radiografias AP, Zanca y comparacion coracoclavicular.", "Los tipos altos suelen requerir valoracion quirurgica.", ["hombro", "acromioclavicular", "luxacion"], [
     { title: "Tipo I", description: "Esguince AC sin desplazamiento." },
     { title: "Tipo II", description: "Rotura AC con elevacion leve." },
@@ -32,6 +38,23 @@ const classifications = [
     { title: "Tipo II", description: "Trazo hacia la glenoides inferior." },
     { title: "Tipo III", description: "Trazo hacia la glenoides superior." },
     { title: "Tipo IV-VI", description: "Patrones transversos y combinados mas extensos." }
+  ]),
+  makeItem("hertel", "Criterios de Hertel", "Shoulder", "Fractura", "Predictores radiograficos de isquemia de la cabeza humeral en fracturas proximales intracapsulares.", "Ayudan a estimar riesgo biologico y a complementar la lectura de Neer o Codman en humero proximal.", "AP, Y escapular, axilar y CT; evaluar calcar medial y bisagra medial.", "Son utiles para estratificar riesgo, pero no sustituyen el juicio clinico ni predicen por si solos toda osteonecrosis.", ["hertel", "isquemia", "cabeza humeral", "calcar", "bisagra medial"], [
+    { title: "Extension metafisaria < 8 mm", description: "Poca extension calcarica posteromedial se asocia a mayor riesgo de compromiso vascular." },
+    { title: "Bisagra medial desplazada > 2 mm", description: "La perdida de la bisagra medial aumenta inestabilidad e isquemia potencial." },
+    { title: "Trazo anatomico del cuello", description: "Las fracturas que comprometen el cuello anatomico incrementan la preocupacion por perfusion de la cabeza." }
+  ]),
+  makeItem("codman", "Codman", "Shoulder", "Fractura", "Describe fracturas del humero proximal a partir de cuatro segmentos anatomicos clasicos.", "Base conceptual para clasificaciones modernas del humero proximal y para entender combinaciones tipo LEGO.", "AP, Y escapular, axilar y CT si el patron es complejo.", "Los segmentos son cabeza, troquiter, troquin y diafisis; la combinacion de partes orienta complejidad y manejo.", ["codman", "humero proximal", "4 partes", "lego"], [
+    { title: "Una parte", description: "Ningun segmento principal esta desplazado de forma relevante." },
+    { title: "Dos partes", description: "Un segmento se separa del resto, como cuello quirurgico o una tuberosidad." },
+    { title: "Tres partes", description: "Dos segmentos estan desplazados, con mayor complejidad reconstructiva." },
+    { title: "Cuatro partes", description: "Separacion de cabeza, tuberosidades y diafisis; alto riesgo biologico y mecanico." }
+  ]),
+  makeItem("mayo-fjd", "Mayo-FJD", "Shoulder", "Fractura", "Clasificacion del humero proximal basada en reconocimiento de patrones.", "Busca identificar el patron principal antes de aplicar criterios de desplazamiento, con buena reproducibilidad especialmente en CT.", "Radiografias AP, Y, axilar y CT con reconstrucciones para reconocer el patron.", "Agrupa patrones de tuberosidades, cuello y cabeza; CT suele mejorar el acuerdo interobservador.", ["mayo-fjd", "humero proximal", "patrones", "shoulder"], [
+    { title: "Tuberosidades", description: "Fracturas aisladas del troquiter o troquin, con o sin luxacion asociada." },
+    { title: "Cuello quirurgico", description: "Patron del cuello quirurgico, con o sin tuberosidades asociadas." },
+    { title: "Varo posteromedial / valgo impactado", description: "Patrones impactados con inclinacion o rotacion caracteristica de la cabeza." },
+    { title: "Cabeza comprometida", description: "Incluye cabeza luxada, head split o impresion cefalica." }
   ]),
   makeItem("mason", "Mason", "Elbow", "Fractura", "Clasifica fracturas de cabeza radial por desplazamiento y conminucion.", "Sirve para anticipar bloqueo mecanico e inestabilidad del codo.", "AP y lateral de codo; CT cuando la conminucion no es clara.", "Versiones modernas agregan luxacion asociada.", ["codo", "cabeza radial", "bloqueo"], [
     { title: "Tipo I", description: "No desplazada o minima." },
@@ -98,6 +121,18 @@ const classifications = [
   makeItem("tscherne", "Tscherne", "General Trauma", "Partes blandas", "Clasifica dano de tejidos blandos en fracturas cerradas y abiertas.", "Aporta gravedad del dano mas alla del trazo oseo.", "Evaluacion clinica de piel, musculo y contaminacion.", "Importante en trauma de alta energia.", ["tscherne", "partes blandas", "cerrada"], [
     { title: "Cerrada 0-3", description: "Desde contusion minima hasta degloving o sindrome compartimental." },
     { title: "Abierta 1-4", description: "Desde herida limpia hasta amputacion subtotal o dano vascular grave." }
+  ]),
+  makeItem("lund-browder", "Lund-Browder", "General Trauma", "Quemaduras", "Esquema para estimar el porcentaje de superficie corporal quemada ajustado por edad.", "Es la referencia mas precisa para calcular TBSA en ninos y tambien util en adultos cuando se busca mayor exactitud.", "Valoracion clinica de quemaduras de espesor parcial o total sobre esquema corporal anterior y posterior.", "Supera a la regla de los 9 cuando la edad modifica la proporcion cabeza-extremidades o cuando hay quemaduras irregulares.", ["lund-browder", "quemaduras", "tbsa", "superficie corporal"], [
+    { title: "Cabeza y cuello", description: "El porcentaje cambia con la edad, mayor en lactantes y menor conforme crecen." },
+    { title: "Tronco", description: "Se divide en superficies anterior y posterior para sumar area afectada." },
+    { title: "Extremidades", description: "Cada segmento tiene ponderacion segun edad y lateralidad para un calculo mas fino." }
+  ]),
+  makeItem("rule-of-nines", "Rule of Nines (9%)", "General Trauma", "Quemaduras", "Metodo rapido para estimar superficie corporal quemada en adultos mediante bloques de 9 por ciento.", "Muy util en triage inicial y reanimacion temprana cuando se necesita una aproximacion inmediata.", "Valoracion clinica global de quemaduras de espesor parcial o total; menos exacta en ninos o en habitus extremos.", "En el adulto clasico: cabeza 9%, cada brazo 9%, tronco anterior 18%, tronco posterior 18%, cada pierna 18% y perine 1%.", ["rule of nines", "9%", "quemaduras", "tbsa", "wallace"], [
+    { title: "Cabeza", description: "9% del total corporal en el adulto." },
+    { title: "Cada miembro superior", description: "9% por brazo, con 4.5% anterior y 4.5% posterior." },
+    { title: "Tronco", description: "18% anterior y 18% posterior." },
+    { title: "Cada miembro inferior", description: "18% por pierna en el adulto." },
+    { title: "Perine", description: "1% del total corporal." }
   ]),
   makeItem("salter-harris", "Salter-Harris", "Pediatrics", "Fisis", "Clasifica lesiones fisarias en trauma pediatrico.", "Base para estimar riesgo de alteracion del crecimiento.", "Radiografia simple; MRI si el trazo es sutil.", "Los tipos altos aumentan riesgo de arresto fisario.", ["pediatria", "fisis", "crecimiento"], [
     { title: "Tipo I", description: "Solo a traves de la fisis." },
@@ -335,7 +370,8 @@ const typeLabels = {
   "Fractura intertrocanterica": { en: "Intertrochanteric fracture", es: "Fractura intertrocanterica" },
   Condral: { en: "Chondral", es: "Condral" },
   Puntaje: { en: "Score", es: "Puntaje" },
-  "Fractura-luxacion": { en: "Fracture-dislocation", es: "Fractura-luxacion" }
+  "Fractura-luxacion": { en: "Fracture-dislocation", es: "Fractura-luxacion" },
+  Quemaduras: { en: "Burns / TBSA", es: "Quemaduras" }
 };
 
 const uiText = {
@@ -466,6 +502,19 @@ const englishContent = {
       { title: "Type III", description: "Intra-articular extension into the acromioclavicular joint." }
     ]
   },
+  robinson: {
+    summary: "Classifies clavicle fractures by anatomic location and displacement.",
+    use: "Very useful for organizing medial, shaft, and lateral clavicle fractures, especially in studies and surgical communication.",
+    imaging: "AP and cephalic clavicle radiographs; CT when the medial or lateral end pattern is complex.",
+    notes: "Group 2 corresponds to the midshaft; B subgroups usually imply significant displacement or comminution.",
+    keywords: ["robinson", "clavicle", "midshaft", "displaced"],
+    levels: [
+      { title: "Type 1", description: "Medial-third clavicle fractures." },
+      { title: "Type 2A", description: "Minimally displaced shaft fractures." },
+      { title: "Type 2B", description: "Displaced or comminuted shaft fractures." },
+      { title: "Type 3", description: "Lateral-third fractures, with variable stability depending on the coracoclavicular ligaments." }
+    ]
+  },
   rockwood: {
     summary: "Classifies acromioclavicular injuries by displacement and ligament damage.",
     use: "Practical system for separating mild AC injuries from complex ones.",
@@ -505,6 +554,44 @@ const englishContent = {
       { title: "Type II", description: "Fracture line into the inferior glenoid." },
       { title: "Type III", description: "Fracture line into the superior glenoid." },
       { title: "Type IV-VI", description: "More extensive transverse and combined patterns." }
+    ]
+  },
+  hertel: {
+    summary: "Radiographic predictors of humeral head ischemia in intracapsular proximal humerus fractures.",
+    use: "Helps estimate biologic risk and complements Neer or Codman-based reading of proximal humerus fractures.",
+    imaging: "AP, scapular Y, axillary, and CT views; specifically assess the medial calcar and medial hinge.",
+    notes: "Useful for risk stratification, but not sufficient by itself to predict all later osteonecrosis.",
+    keywords: ["hertel", "ischemia", "humeral head", "calcar", "medial hinge"],
+    levels: [
+      { title: "Metaphyseal extension < 8 mm", description: "Limited posteromedial calcar extension is associated with greater ischemic risk." },
+      { title: "Medial hinge displacement > 2 mm", description: "Loss of the medial hinge increases instability and potential ischemia." },
+      { title: "Anatomic neck pattern", description: "Fractures involving the anatomic neck raise concern for humeral head perfusion." }
+    ]
+  },
+  codman: {
+    summary: "Describes proximal humerus fractures using four classic anatomic segments.",
+    use: "Conceptual foundation for modern proximal humerus classifications and LEGO-like pattern thinking.",
+    imaging: "AP, scapular Y, axillary, and CT when the pattern is complex.",
+    notes: "The segments are the head, greater tuberosity, lesser tuberosity, and shaft; their combinations define complexity.",
+    keywords: ["codman", "proximal humerus", "4-part", "lego"],
+    levels: [
+      { title: "One-part", description: "No main segment is meaningfully displaced." },
+      { title: "Two-part", description: "One segment separates from the rest, such as the surgical neck or one tuberosity." },
+      { title: "Three-part", description: "Two segments are displaced, increasing reconstructive complexity." },
+      { title: "Four-part", description: "Separation of head, tuberosities, and shaft; high biologic and mechanical risk." }
+    ]
+  },
+  "mayo-fjd": {
+    summary: "Pattern-recognition classification for proximal humerus fractures.",
+    use: "Seeks to identify the main fracture pattern before displacement criteria are applied, with good reproducibility especially on CT.",
+    imaging: "AP, scapular Y, axillary radiographs, and CT reconstructions to define the dominant pattern.",
+    notes: "It groups tuberosity, neck, and head-compromising patterns; CT usually improves interobserver agreement.",
+    keywords: ["mayo-fjd", "proximal humerus", "patterns", "shoulder"],
+    levels: [
+      { title: "Tuberosity patterns", description: "Isolated greater or lesser tuberosity fractures, with or without associated dislocation." },
+      { title: "Surgical neck", description: "Surgical neck pattern, with or without associated tuberosity fractures." },
+      { title: "Varus posteromedial / valgus impacted", description: "Impaction patterns with characteristic head tilt or rotation." },
+      { title: "Head compromise", description: "Includes head dislocation, head split, or head impression injuries." }
     ]
   },
   mason: {
@@ -655,6 +742,32 @@ const englishContent = {
     levels: [
       { title: "Closed 0-3", description: "From minimal contusion to degloving or compartment syndrome." },
       { title: "Open 1-4", description: "From a clean wound to subtotal amputation or severe vascular injury." }
+    ]
+  },
+  "lund-browder": {
+    summary: "Age-adjusted chart used to estimate burned total body surface area.",
+    use: "Most precise bedside reference for TBSA calculation in children and also useful in adults when greater accuracy is needed.",
+    imaging: "Clinical mapping of partial- and full-thickness burns over anterior and posterior body charts.",
+    notes: "It outperforms the Rule of Nines when age changes head-limb proportions or burns are irregularly distributed.",
+    keywords: ["lund-browder", "burns", "tbsa", "body surface area"],
+    levels: [
+      { title: "Head and neck", description: "Percentage changes with age, larger in infants and smaller as the child grows." },
+      { title: "Trunk", description: "Anterior and posterior surfaces are calculated separately and added." },
+      { title: "Extremities", description: "Each limb segment is weighted by age and side for finer estimation." }
+    ]
+  },
+  "rule-of-nines": {
+    summary: "Rapid method to estimate burned body surface area in adults using 9 percent blocks.",
+    use: "Very useful in initial triage and early resuscitation when an immediate approximation is needed.",
+    imaging: "Global clinical assessment of partial- and full-thickness burns; less accurate in children or extreme body habitus.",
+    notes: "Classic adult distribution: head 9%, each arm 9%, anterior trunk 18%, posterior trunk 18%, each leg 18%, and perineum 1%.",
+    keywords: ["rule of nines", "9%", "burns", "tbsa", "wallace"],
+    levels: [
+      { title: "Head", description: "9% of adult total body surface area." },
+      { title: "Each upper limb", description: "9% per arm, usually 4.5% anterior and 4.5% posterior." },
+      { title: "Trunk", description: "18% anterior and 18% posterior." },
+      { title: "Each lower limb", description: "18% per leg in the adult." },
+      { title: "Perineum", description: "1% of total body surface area." }
     ]
   },
   "salter-harris": {

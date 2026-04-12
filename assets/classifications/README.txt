@@ -14,6 +14,12 @@ Examples:
 - ogden.jpg
 - weiss.jpg
 - bado.jpg
+- lund-browder.jpg
+- rule-of-nines.jpg
+- robinson.jpg
+- hertel.jpg
+- codman.jpg
+- mayo-fjd.jpg
 
 If you want more than one image for the same classification:
 - Keep the files in this folder
